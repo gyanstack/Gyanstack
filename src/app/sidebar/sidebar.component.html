@@ -1,0 +1,66 @@
+<table class="table table-bordered table-hovewered">
+  <tr>
+    <td>
+      <a routerLink="/dashboard" routerLinkActive="active">
+        <i class="fa fa-cog fa-spin fa-1x fa-fw" aria-hidden="true"></i> Dashboard</a>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <a href="#parent1" data-toggle="collapse" aria-expanded="false" aria-controls="parent1">
+        <i class="fa fa-cog fa-spin fa-1x fa-fw" aria-hidden="true"></i> Services</a>
+    </td>
+  </tr>
+  <tr class="collapse" id="parent1">
+    <td>
+      <div class="card">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><a [routerLink]="['main/services', 1]" routerLinkActive="active">VPN</a></li>
+          <li class="list-group-item"><a [routerLink]="['main/services', 2]" routerLinkActive="active">Cloud</a></li>
+          <li class="list-group-item"><a [routerLink]="['main/services', 3]" routerLinkActive="active">Backup</a></li>
+          <li class="list-group-item"><a [routerLink]="['main/services', 4]" routerLinkActive="active">Antivirus</a></li>
+        </ul> 
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <a href="#parent2" data-toggle="collapse" aria-expanded="false" aria-controls="parent2">
+        <i class="fa fa-cog fa-spin fa-1x fa-fw" aria-hidden="true"></i> Tips and Tricks</a>
+    </td>
+  </tr>
+  <tr class="collapse" id="parent2">
+    <td>
+      <div class="card">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><a [routerLink]="['main/tips_n_tricks', 1]"> Internet </a></li>
+          <li class="list-group-item"><a [routerLink]="['main/tips_n_tricks', 2]">Networking</a></li>
+        </ul>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <a routerLink="main/Mobile">
+        <i class="fa fa-cog fa-spin fa-1x fa-fw" aria-hidden="true"></i> Mobile Stuff</a>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <a routerLink="main/Gadgets">
+        <i class="fa fa-cog fa-spin fa-1x fa-fw" aria-hidden="true"></i> Gadgets</a>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <a routerLink="main/Miscellanious">
+        <i class="fa fa-cog fa-spin fa-1x fa-fw" aria-hidden="true"></i> Miscellanious</a>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <a routerLink="main/Deals">
+        <i class="fa fa-cog fa-spin fa-1x fa-fw" aria-hidden="true"></i> Deals</a>
+    </td>
+  </tr>
+</table>

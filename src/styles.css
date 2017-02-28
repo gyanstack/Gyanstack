@@ -1,0 +1,7 @@
+.navbar {
+    padding-bottom: 0px !important;
+}
+
+.card ul :hover{
+    background-color: darkgray
+}
