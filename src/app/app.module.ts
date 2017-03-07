@@ -10,7 +10,8 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { MainComponent } from './main/main.component';
-import { DashboardComponent } from './dashboard/dashboard.component'; 
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { DashboardComponent } from './main/dashboard/dashboard.component'; 
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     SidebarComponent,
     // CollapseDirective,
     MainComponent,
+    DashboardComponent,
     DashboardComponent
   ],
   imports: [

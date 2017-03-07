@@ -5,3 +5,30 @@
 .card ul :hover{
     background-color: darkgray
 }
+
+.sidebarBg{
+background-color: indianred !important;
+}
+
+.sidebarBg tr td{
+    background-color: indianred !important;
+}
+
+td a{ 
+    color:white;
+    font-weight: bold;
+}
+
+.card ul li a{
+   color:black; 
+   font-weight: 400;
+}
+
+.noLeftPad{
+    padding-left: 0px !important;
+}
+
+.btnWhite{
+    border-color: white !important;
+    color:white !important;
+}
