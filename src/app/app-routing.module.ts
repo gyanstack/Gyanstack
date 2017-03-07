@@ -6,12 +6,12 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 const routes: Routes = [
     { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
     { path: 'dashboard', component: DashboardComponent },
-    { path: 'main/services/:id', component: MainComponent },
-    { path: 'main/tips_n_tricks/:id', component: MainComponent },
-    { path: 'main/Mobile', component: MainComponent },
-    { path: 'main/Gadgets', component: MainComponent },
-    { path: 'main/Miscellanious', component: MainComponent },
-    { path: 'main/Deals', component: MainComponent }
+    { path: 'services/:id', component: MainComponent },
+    { path: 'tips_n_tricks/:id', component: MainComponent },
+    { path: 'Mobile', component: MainComponent },
+    { path: 'Gadgets', component: MainComponent },
+    { path: 'Miscellanious', component: MainComponent },
+    { path: 'Deals', component: MainComponent }
 ];
 
 @NgModule({
