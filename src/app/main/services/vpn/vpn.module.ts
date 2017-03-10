@@ -2,6 +2,7 @@ import { NgModule }       from '@angular/core';
 import { CommonModule }   from '@angular/common';
 
 import {VpnComponent } from './vpn.component';
+import { DetailsComponent } from './details.component';
 
 import {VpnRoutingModule } from './vpn-routing.module';
 
@@ -11,7 +12,8 @@ import {VpnRoutingModule } from './vpn-routing.module';
         VpnRoutingModule
     ],
     declarations:[
-        VpnComponent
+        VpnComponent,
+        DetailsComponent
     ]
 })
 export class VpnModule {}

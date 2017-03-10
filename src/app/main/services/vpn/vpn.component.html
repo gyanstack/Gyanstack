@@ -6,35 +6,13 @@
       </div>
       <div class="card-block">
         <div class="list-group">
-          <li class="list-group-item justify-content-between">
-          <h5><a routerLink="/create_vpn_connection/1" routerLinkActive="active">How to create vpn connection ?</a></h5>
-          <p>
+          <li class="list-group-item justify-content-between" *ngFor="let content of vpnContentList">
+          <h4><a routerLink="{{content.routeLink}}" routerLinkActive="active">{{content.question}}</a></h4>
+           <p>
             <i class="fa fa-book fa-1x fa-fw" aria-hidden="true"></i>
-            Test description test description test description test description test description test description test description test
-            description test description test description test description test description test description test description
-            test description test description test description test description test description test description
+            <span>{{content.answerShortDescription}}</span>
           </p>
-          <a routerLink="/create_vpn_connection/1" class="btn btn-default btn-sm">read more...</a>
-          </li>
-           <li class="list-group-item justify-content-between">
-          <h5><a routerLink="/create_vpn_connection/1" routerLinkActive="active">How to create vpn connection ?</a></h5>
-          <p>
-            <i class="fa fa-book fa-1x fa-fw" aria-hidden="true"></i>
-            Test description test description test description test description test description test description test description test
-            description test description test description test description test description test description test description
-            test description test description test description test description test description test description
-          </p>
-          <a routerLink="/create_vpn_connection/1" class="btn btn-default btn-sm">read more...</a>
-          </li>
-           <li class="list-group-item justify-content-between">
-          <h5><a routerLink="/create_vpn_connection/1" routerLinkActive="active">How to create vpn connection ?</a></h5>
-          <p>
-            <i class="fa fa-book fa-1x fa-fw" aria-hidden="true"></i>
-            Test description test description test description test description test description test description test description test
-            description test description test description test description test description test description test description
-            test description test description test description test description test description test description
-          </p>
-          <a routerLink="/create_vpn_connection/1" class="btn btn-default btn-sm">read more...</a>
+          <a routerLink="{{content.routeLink}}" class="btn btn-default btn-sm">read more...</a>
           </li>
         </div>
       </div>
