@@ -40,19 +40,19 @@ td a{
 }
 
 h1{
-    font-size: 24px;
-}
-
-h2{
-    font-size: 22px;
-}
-
-h3{
     font-size: 20px;
 }
 
-h4{
+h2{
+    font-size: 19px;
+}
+
+h3{
     font-size: 18px;
+}
+
+h4{
+    font-size: 17px;
 }
 
 h5{
@@ -61,4 +61,8 @@ h5{
 
 h5{
     font-size: 14px;
+}
+
+.my-2{
+    padding: 2px 10px 2px 10px;
 }

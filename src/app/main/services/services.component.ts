@@ -4,8 +4,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   moduleId: module.id,
   selector: 'app-services',
-  templateUrl: './services.component.html',
-  styleUrls: ['./services.component.css']
+  template: `<p>{{title}}</p>
+              <router-outlet></router-outlet>`
 })
 export class ServicesComponent implements OnInit {
 

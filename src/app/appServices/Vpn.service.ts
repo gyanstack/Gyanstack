@@ -10,6 +10,8 @@ export class VpnService{
     private headers = new Headers({'Content-Type': 'application/json'});
     private vpnContentUrl = 'api/vpnContentList';
     private vpnContentDescriptionUrl = 'api/vpnContentCompleteDescription';
+    private cloudContentUrl = 'api/cloudContentList';
+    private cloudContentDescriptionUrl = 'api/cloudContentCompleteDescription';
 
     constructor(private http:Http){}
 
@@ -22,6 +24,21 @@ export class VpnService{
 
     getVpnContentFullDescription(id: number): Promise<BaseModel> {
     const url = `${this.vpnContentDescriptionUrl}/${id}`;
+    return this.http.get(url)
+      .toPromise()
+      .then(response => response.json().data as BaseModel)
+      .catch(this.handleError);
+  }
+
+  getCloudContents():Promise<BaseModel[]>{
+        return this.http.get(this.cloudContentUrl)
+        .toPromise()
+        .then(response=>response.json().data as BaseModel[])
+        .catch(this.handleError);
+    }
+
+    getCloudContentFullDescription(id: number): Promise<BaseModel> {
+    const url = `${this.cloudContentDescriptionUrl}/${id}`;
     return this.http.get(url)
       .toPromise()
       .then(response => response.json().data as BaseModel)

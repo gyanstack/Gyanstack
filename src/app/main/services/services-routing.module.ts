@@ -14,25 +14,22 @@ const servicesRoutes: Routes = [
                     {
                         path: 'vpn',
                         loadChildren: 'app/main/services/vpn/vpn.module#VpnModule',
-                         data: { title: 'Vpn services' }
+                        data: { title: 'Vpn services' }
                     },
                     {
                         path: 'cloud',
-                        component: ServicesComponent,
-                         data: { title: 'Cloud services' }
-                        //loadChildren: 'app/main/services/cloud/cloud.module#CloudModule'
+                        data: { title: 'Cloud services' },
+                        loadChildren: 'app/main/services/cloud/cloud.module#CloudModule'
                     },
                     {
                         path: 'backup',
-                        component: ServicesComponent,
-                         data: { title: 'Backup serices' }
-                        //loadChildren: 'app/main/services/backup/backup.module#BackupModule'
+                        data: { title: 'Backup serices' },
+                        loadChildren: 'app/main/services/backup/backup.module#BackupModule'
                     },
                     {
                         path: 'antivirus',
-                        component: ServicesComponent,
-                         data: { title: 'Antivirus services' }
-                        //loadChildren: 'app/main/services/antivirus/antivirus.module#AntivirusModule'
+                        data: { title: 'Antivirus services' },
+                        loadChildren: 'app/main/services/antivirus/antivirus.module#AntivirusModule'
                     },
                     {
                         path: '',

@@ -24,7 +24,7 @@ export class DetailsComponent implements OnInit {
             .subscribe(v => this.title = v["title"]);
 
         this.route.params
-            .switchMap((params: Params) => this.vpnService.getVpnContentFullDescription(+params['id']))
-            .subscribe(vpnContent => this.content = vpnContent);
+            .switchMap((params: Params) => this.vpnService.getCloudContentFullDescription(+params['id']))
+            .subscribe(cloudContent => this.content = cloudContent);
     }
 }

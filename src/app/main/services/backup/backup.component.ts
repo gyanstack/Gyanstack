@@ -5,11 +5,11 @@ import { VpnService } from 'app/appServices/Vpn.service';
 
 @Component({
   moduleId: module.id,
-  selector: 'app-vpn',
+  selector: 'app-backup',
   templateUrl: '../services.component.html'
 })
-export class VpnComponent implements OnInit {
-  title: string;
+export class BackupComponent implements OnInit {
+title: string;
   contentList: BaseModel[] = [];
   constructor(
     private route: ActivatedRoute,
@@ -22,7 +22,6 @@ export class VpnComponent implements OnInit {
       .subscribe(v => this.title = v["title"]);
 
       this.vpnService.getVpnContents()
-      .then(vpnContents=>this.contentList = vpnContents);
+      .then(cloudContents=>this.contentList = cloudContents);
   }
-
 }

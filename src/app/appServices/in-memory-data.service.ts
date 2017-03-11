@@ -85,6 +85,65 @@ export class InMemoryDataService implements InMemoryDbService {
       }
     ];
 
-    return { vpnContentList, vpnContentCompleteDescription };
+    let cloudContentList = [
+      {
+        id: 1,
+        routeLink: 'create_cloud/1',
+        question: 'How to create cloud ?',
+        answerShortDescription: `Test description test description test description test description test
+            description test description test description test description test description test description 
+            test description test description test description test description test description test description`
+      },
+      {
+        id: 2,
+        routeLink: 'how_to_resolve_this_in_cloud/2',
+        question: 'How to resolve this in cloud?',
+        answerShortDescription: `Test description test description test description test description test
+            description test description test description test description test description test description 
+            test description test description test description test description test description test description`
+      }
+    ];
+
+    let cloudContentCompleteDescription = [
+      {
+        id: 1,
+        question: 'How to create cloud ?',
+        answerDescription: `<p><i class="fa fa-book fa-1x fa-fw" aria-hidden="true"></i>
+        <b>Test description</b> test description test description test description test description test description test description test
+            description test description test description test description test description test description test description
+            test description test description test description test description test description test description 
+            Test description test description test description test description test description test description test description test
+            description test description test description test description test description test description test description
+            test description test description test description test description test description test description Test description test description test description test description test description test description test description test
+            description test description test description test description test description test description test description
+            test description test description test description test description test description test description Test description test description test description test description test description test description test description test
+            description test description test description test description test description test description test description
+            test description test description test description test description test description test description Test description test description test description test description test description test description test description test
+            description test description test description test description test description test description test description
+            test description test description test description test description test description test description Test description test description test description test description test description test description test description test
+            description test description test description test description test description test description test description
+            test description test description test description test description test description test description</p>`
+      },
+      {
+        id: 2,
+        question: 'How to resolve this in cloud?',
+        answerDescription: `Test description test description test description test description test description test description test description test
+            description test description test description test description test description test description test description
+            test description test description test description test description test description test description 
+            Test description test description test description test description test description test description test description test
+            description test description test description test description test description test description test description
+            test description test description test description test description test description test description Test description test description test description test description test description test description test description test
+            description test description test description test description test description test description test description
+            test description test description test description test description test description test description Test description test description test description test description test description test description test description test
+            description test description test description test description test description test description test description
+            test description test description test description test description test description test description Test description test description test description test description test description test description test description test
+            description test description test description test description test description test description test description
+            test description test description test description test description test description test description Test description test description test description test description test description test description test description test
+            description test description test description test description test description test description test description
+            test description test description test description test description test description test description`
+      }
+    ];
+
+    return { vpnContentList, vpnContentCompleteDescription, cloudContentList, cloudContentCompleteDescription };
   }
 }
