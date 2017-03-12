@@ -6,7 +6,9 @@ import { ServicesComponent } from './main/services/services.component';
 const routes: Routes = [
     { 
         path: 'dashboard', 
-        component: DashboardComponent 
+        redirectTo: '',
+        pathMatch: 'full'
+        
     },
     { 
         path: 'services', 
@@ -14,8 +16,7 @@ const routes: Routes = [
     },
     {
         path: '',
-        redirectTo: '/dashboard',
-        pathMatch: 'full'
+        component: DashboardComponent 
     },
     { 
         path: '**', 
