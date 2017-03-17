@@ -32,3 +32,119 @@ td a{
     border-color: white !important;
     color:white !important;
 }
+
+.centered {
+  position: fixed; /* or absolute */
+  top: 50%;
+  left: 50%;
+}
+
+h1{
+    font-size: 15px;
+}
+
+h2{
+    font-size: 14px;
+}
+
+h3{
+    font-size: 18px;
+}
+
+h4{
+    font-size: 17px;
+}
+
+h5{
+    font-size: 16px;
+}
+
+h5{
+    font-size: 14px;
+}
+
+.my-2{
+    padding: 2px 10px 2px 10px;
+}
+
+.textBlue{
+    color:darkslateblue
+}
+
+.textBlue li a{
+    color:darkslateblue !important;
+}
+
+.card-header{
+    padding: 5px !important;
+}
+
+.list-group-item{
+    border-color: #fccccc !important;
+}
+
+.divcentered {
+  position: fixed; /* or absolute */
+  top: 50%;
+  left: 30%;
+}
+
+.tile1{
+    /*height:100px;*/
+    background-color: #f16d64;
+    border-radius: 2px; 
+    margin: 5px; 
+    padding-top: 13px; 
+    text-align: center;
+    color: navajowhite
+}
+
+.tile2{
+    /*height:100px;*/
+    background-color: #35BEC1;
+    border-radius: 2px; 
+    margin: 5px; 
+    padding-top: 13px; 
+    text-align: center;
+    color: navajowhite
+}
+
+.tile3{
+    /*height:100px;*/
+    background-color: #E6A700;
+    border-radius: 2px; 
+    margin: 5px; 
+    padding-top: 13px; 
+    text-align: center;
+    color: navajowhite
+}
+
+.tile4{
+    height:50px;
+    background-color: #95C753;
+    border-radius: 2px; 
+    margin: 5px; 
+    padding-top: 13px; 
+    text-align: center;
+    color: navajowhite
+}
+
+.tile5{
+    height:50px;
+    background-color: #35BEC1;
+    border-radius: 2px; 
+    margin: 5px; 
+    padding-top: 13px; 
+    text-align: center;
+    color: navajowhite
+}
+
+.tile6{
+    height:50px;
+    background-color: #E6A700;
+    border-radius: 2px; 
+    margin: 5px; 
+    padding-top: 13px; 
+    text-align: center;
+    color: navajowhite
+}

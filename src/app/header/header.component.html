@@ -1,9 +1,34 @@
-<nav class="navbar navbar-light bg-faded sidebarBg">
-  <a class="navbar-brand" href="#">
-    <img src="./assets/logo.png" height="70px" width="150px" alt="" />
-  </a>
-  <form class="form-inline" style="float:right">
-    <input class="form-control mr-sm-2" type="text" placeholder="Search">
-    <button class="btn btn-outline-success my-2 my-sm-0 btnWhite" type="submit">Search</button>
-  </form>
+<nav class="navbar navbar-dark navbar-fixed-top bg-inverse sidebarBg" style="padding: 0px">
+  <div class="container">
+    <button type="button" class="navbar-toggler hidden-sm-up pull-xs-right" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+      aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    <a class="navbar-brand" routerLink="/" style="padding: 0px"><img src="./assets/logo2.png"></a>
+    <div class="collapse navbar-toggleable-xs" id="navbar">
+      <nav class="nav navbar-nav pull-xs-left">
+        <a class="nav-item nav-link" routerLink="/" routerLinkActive="active"><i class="fa fa-home icon" aria-hidden="true"></i></a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="http://www.gyanstack.com" id="navbarDropdownMenuServiceLink" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+          Services
+        </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuServiceLink">
+            <a class="dropdown-item" routerLink="/services/vpn/" routerLinkActive="active">VPN</a>
+            <a class="dropdown-item" routerLink="/services/cloud" routerLinkActive="active">Cloud</a>
+            <a class="dropdown-item" routerLink="/services/backup" routerLinkActive="active">Backup</a>
+            <a class="dropdown-item" routerLink="/services/antivirus" routerLinkActive="active">Antivirus</a>
+          </div>
+        </li>
+        <a class="nav-item nav-link" routerLink="/Internet" routerLinkActive="active">Internet</a>
+        <a class="nav-item nav-link" routerLink="/Networking" routerLinkActive="active">Networking</a>
+        <a class="nav-item nav-link" routerLink="/Mobile" routerLinkActive="active">Mobile Stuff</a>
+        <a class="nav-item nav-link" routerLink="/Gadgets" routerLinkActive="active">Gadgets</a>
+        <a class="nav-item nav-link" routerLink="/Deals" routerLinkActive="active">Deals</a>
+      </nav>
+    </div>
+  </div>
 </nav>

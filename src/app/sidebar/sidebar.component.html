@@ -11,14 +11,14 @@
         <i class="fa fa-cog fa-spin fa-1x fa-fw" aria-hidden="true"></i> Services</a>
     </td>
   </tr>
-  <tr class="collapse" id="parent1">
+  <tr class="collapse in" id="parent1" aria-expanded="true">
     <td>
       <div class="card">
         <ul class="list-group list-group-flush">
-          <li class="list-group-item"><a [routerLink]="['services', 1]" routerLinkActive="active">VPN</a></li>
-          <li class="list-group-item"><a [routerLink]="['services', 2]" routerLinkActive="active">Cloud</a></li>
-          <li class="list-group-item"><a [routerLink]="['services', 3]" routerLinkActive="active">Backup</a></li>
-          <li class="list-group-item"><a [routerLink]="['services', 4]" routerLinkActive="active">Antivirus</a></li>
+          <li class="list-group-item"><a routerLink="/services/vpn/" routerLinkActive="active">VPN</a></li>
+          <li class="list-group-item"><a routerLink="/services/cloud" routerLinkActive="active">Cloud</a></li>
+          <li class="list-group-item"><a routerLink="/services/backup" routerLinkActive="active">Backup</a></li>
+          <li class="list-group-item"><a routerLink="/services/antivirus" routerLinkActive="active">Antivirus</a></li>
         </ul> 
       </div>
     </td>

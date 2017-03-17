@@ -2,34 +2,42 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-// import { CollapseDirective } from 'ng2-bootstrap'
 import { AppRoutingModule } from './app-routing.module';
+import {ServicesModule } from './main/services/services.module';
+
+
+// Imports for loading & configuring the in-memory web api
+// import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService }  from './appServices/in-memory-data.service';
+
+import{VpnService} from './appServices/Vpn.service';
 
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
-import { MainComponent } from './main/main.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { DashboardComponent } from './main/dashboard/dashboard.component'; 
+import { DashboardComponent } from './main/dashboard/dashboard.component';
+import { AdvertismentComponent } from './advertisment/advertisment.component';
+import { HeaderFeaturedComponent } from './header-featured/header-featured.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     SidebarComponent,
-    // CollapseDirective,
-    MainComponent,
     DashboardComponent,
-    DashboardComponent
+    AdvertismentComponent,
+    HeaderFeaturedComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRoutingModule
+    // InMemoryWebApiModule.forRoot(InMemoryDataService),
+    AppRoutingModule,
+    ServicesModule
   ],
-  providers: [],
+  providers: [VpnService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
