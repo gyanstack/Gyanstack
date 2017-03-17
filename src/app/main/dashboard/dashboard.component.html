@@ -1,8 +1,7 @@
-<div class="card">
-  <div class="card-header">
+<!--<div class="card-header">
     <h1>Featured</h1>
-  </div>
-  <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
+  </div>-->
+<!--<div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
     <div class="controls-top">
       <a class="btn-floating btn-small" href="#multi-item-example" data-slide="prev" style="float:left"><i class="fa fa-reply fa-1x"></i></a>
       <a class="btn-floating btn-small" href="#multi-item-example" data-slide="next" style="float:right"><i class="fa fa-share fa-1x"></i></a>
@@ -110,30 +109,26 @@
         </div>
       </div>
     </div>
-  </div>
-</div>
-<div class="row">
-  <div class="col-md-6">
+  </div>-->
+
+
+
+
+
+<i class="fa fa-circle-o-notch fa-5x fa-spin divcentered" *ngIf="isLoaded"></i>
+<div class="row" *ngIf="contentList">
+  <div class="col-md-12">
     <div class="card">
       <div class="card-header">
         <h1>Latest</h1>
       </div>
       <ul class="list-group textBlue">
-        <li class="list-group-item">
+        <li class="list-group-item" *ngFor="let content of contentList">
           <i class="fa fa-book fa-1x fa-fw" aria-hidden="true"></i>
-          <a routerLink="Change_Background_Color_and_Image_of_Splash_Screen_in_Microsoft_Edge"><b>Windows 10 Tip:</b> Change Background Color and Image of Splash Screen in Microsoft Edge</a>
-        </li>
-        <li class="list-group-item">
-          <i class="fa fa-book fa-1x fa-fw" aria-hidden="true"></i>
-          <a routerLink="dashboard"><b>Windows 10 Tip:</b> Registry Tweaks to Customize UI of Alt+Tab, Task View and Snap Assistant </a>
-        </li>
-        <li class="list-group-item">
-          <i class="fa fa-book fa-1x fa-fw" aria-hidden="true"></i>
-          <a routerLink="dashboard">Transform Windows 7 into Windows 8.1 without using Customization Pack</a>
-        </li>
-        <li class="list-group-item">
-          <i class="fa fa-book fa-1x fa-fw" aria-hidden="true"></i>
-          <a routerLink="dashboard">Customize Start Screen Tiles Background Color, Text Color and Logo in Windows 8.1</a>
+          <a routerLink="{{content.routeLink}}" >
+            <div [innerHTML]="content.question">
+            </div>
+          </a>
         </li>
       </ul>
     </div>
@@ -142,29 +137,11 @@
         <h1>Gadgets</h1>
       </div>
       <ul class="list-group textBlue">
-        <li class="list-group-item">
+        <li class="list-group-item" *ngFor="let content of contentList">
           <i class="fa fa-book fa-1x fa-fw" aria-hidden="true"></i>
-          <a routerLink="Change_Background_Color_and_Image_of_Splash_Screen_in_Microsoft_Edge"><b>Windows 10 Tip:</b> Change Background Color and Image of Splash Screen in Microsoft Edge</a>
-        </li>
-        <li class="list-group-item">
-          <i class="fa fa-book fa-1x fa-fw" aria-hidden="true"></i>
-          <a routerLink="dashboard"><b>Windows 10 Tip:</b> Registry Tweaks to Customize UI of Alt+Tab, Task View and Snap Assistant </a>
-        </li>
-        <li class="list-group-item">
-          <i class="fa fa-book fa-1x fa-fw" aria-hidden="true"></i>
-          <a routerLink="dashboard">Transform Windows 7 into Windows 8.1 without using Customization Pack</a>
-        </li>
-        <li class="list-group-item">
-          <i class="fa fa-book fa-1x fa-fw" aria-hidden="true"></i>
-          <a routerLink="dashboard">Customize Start Screen Tiles Background Color, Text Color and Logo in Windows 8.1</a>
-        </li>
-         <li class="list-group-item">
-          <i class="fa fa-book fa-1x fa-fw" aria-hidden="true"></i>
-          <a routerLink="dashboard">Customize Start Screen Tiles Background Color, Text Color and Logo in Windows 8.1</a>
-        </li>
-         <li class="list-group-item">
-          <i class="fa fa-book fa-1x fa-fw" aria-hidden="true"></i>
-          <a routerLink="dashboard">Customize Start Screen Tiles Background Color, Text Color and Logo in Windows 8.1</a>
+          <a routerLink="{{content.routeLink}}">
+            <div [innerHTML]="content.question"></div>
+          </a>
         </li>
       </ul>
     </div>
@@ -173,46 +150,24 @@
         <h1>Android</h1>
       </div>
       <ul class="list-group textBlue">
-        <li class="list-group-item">
+        <li class="list-group-item" *ngFor="let content of contentList">
           <i class="fa fa-book fa-1x fa-fw" aria-hidden="true"></i>
-          <a routerLink="Change_Background_Color_and_Image_of_Splash_Screen_in_Microsoft_Edge"><b>Windows 10 Tip:</b> Change Background Color and Image of Splash Screen in Microsoft Edge</a>
-        </li>
-        <li class="list-group-item">
-          <i class="fa fa-book fa-1x fa-fw" aria-hidden="true"></i>
-          <a routerLink="dashboard"><b>Windows 10 Tip:</b> Registry Tweaks to Customize UI of Alt+Tab, Task View and Snap Assistant </a>
-        </li>
-        <li class="list-group-item">
-          <i class="fa fa-book fa-1x fa-fw" aria-hidden="true"></i>
-          <a routerLink="dashboard">Transform Windows 7 into Windows 8.1 without using Customization Pack</a>
-        </li>
-        <li class="list-group-item">
-          <i class="fa fa-book fa-1x fa-fw" aria-hidden="true"></i>
-          <a routerLink="dashboard">Customize Start Screen Tiles Background Color, Text Color and Logo in Windows 8.1</a>
+          <a routerLink="{{content.routeLink}}">
+            <div [innerHTML]="content.question"></div>
+          </a>
         </li>
       </ul>
     </div>
-  </div>
-  <div class="col-md-6">
     <div class="card">
       <div class="card-header">
         <h1>Technology</h1>
       </div>
       <ul class="list-group textBlue">
-        <li class="list-group-item">
+        <li class="list-group-item" *ngFor="let content of contentList">
           <i class="fa fa-book fa-1x fa-fw" aria-hidden="true"></i>
-          <a routerLink="Change_Background_Color_and_Image_of_Splash_Screen_in_Microsoft_Edge"><b>Windows 10 Tip:</b> Change Background Color and Image of Splash Screen in Microsoft Edge</a>
-        </li>
-        <li class="list-group-item">
-          <i class="fa fa-book fa-1x fa-fw" aria-hidden="true"></i>
-          <a routerLink="dashboard"><b>Windows 10 Tip:</b> Registry Tweaks to Customize UI of Alt+Tab, Task View and Snap Assistant </a>
-        </li>
-        <li class="list-group-item">
-          <i class="fa fa-book fa-1x fa-fw" aria-hidden="true"></i>
-          <a routerLink="dashboard">Transform Windows 7 into Windows 8.1 without using Customization Pack</a>
-        </li>
-        <li class="list-group-item">
-          <i class="fa fa-book fa-1x fa-fw" aria-hidden="true"></i>
-          <a routerLink="dashboard">Customize Start Screen Tiles Background Color, Text Color and Logo in Windows 8.1</a>
+          <a routerLink="{{content.routeLink}}">
+            <div [innerHTML]="content.question"></div>
+          </a>
         </li>
       </ul>
     </div>
@@ -221,52 +176,24 @@
         <h1>ios</h1>
       </div>
       <ul class="list-group textBlue">
-        <li class="list-group-item">
+        <li class="list-group-item" *ngFor="let content of contentList">
           <i class="fa fa-book fa-1x fa-fw" aria-hidden="true"></i>
-          <a routerLink="Change_Background_Color_and_Image_of_Splash_Screen_in_Microsoft_Edge"><b>Windows 10 Tip:</b> Change Background Color and Image of Splash Screen in Microsoft Edge</a>
-        </li>
-        <li class="list-group-item">
-          <i class="fa fa-book fa-1x fa-fw" aria-hidden="true"></i>
-          <a routerLink="dashboard"><b>Windows 10 Tip:</b> Registry Tweaks to Customize UI of Alt+Tab, Task View and Snap Assistant </a>
-        </li>
-        <li class="list-group-item">
-          <i class="fa fa-book fa-1x fa-fw" aria-hidden="true"></i>
-          <a routerLink="dashboard">Transform Windows 7 into Windows 8.1 without using Customization Pack</a>
-        </li>
-        <li class="list-group-item">
-          <i class="fa fa-book fa-1x fa-fw" aria-hidden="true"></i>
-          <a routerLink="dashboard">Customize Start Screen Tiles Background Color, Text Color and Logo in Windows 8.1</a>
+          <a routerLink="{{content.routeLink}}">
+            <div [innerHTML]="content.question"></div>
+          </a>
         </li>
       </ul>
     </div>
     <div class="card">
       <div class="card-header">
-       <h1>Antivirus</h1>
+        <h1>Antivirus</h1>
       </div>
       <ul class="list-group textBlue">
-        <li class="list-group-item">
+        <li class="list-group-item" *ngFor="let content of contentList">
           <i class="fa fa-book fa-1x fa-fw" aria-hidden="true"></i>
-          <a routerLink="Change_Background_Color_and_Image_of_Splash_Screen_in_Microsoft_Edge"><b>Windows 10 Tip:</b> Change Background Color and Image of Splash Screen in Microsoft Edge</a>
-        </li>
-        <li class="list-group-item">
-          <i class="fa fa-book fa-1x fa-fw" aria-hidden="true"></i>
-          <a routerLink="dashboard"><b>Windows 10 Tip:</b> Registry Tweaks to Customize UI of Alt+Tab, Task View and Snap Assistant </a>
-        </li>
-        <li class="list-group-item">
-          <i class="fa fa-book fa-1x fa-fw" aria-hidden="true"></i>
-          <a routerLink="dashboard">Transform Windows 7 into Windows 8.1 without using Customization Pack</a>
-        </li>
-        <li class="list-group-item">
-          <i class="fa fa-book fa-1x fa-fw" aria-hidden="true"></i>
-          <a routerLink="dashboard">Customize Start Screen Tiles Background Color, Text Color and Logo in Windows 8.1</a>
-        </li>
-         <li class="list-group-item">
-          <i class="fa fa-book fa-1x fa-fw" aria-hidden="true"></i>
-          <a routerLink="dashboard">Customize Start Screen Tiles Background Color, Text Color and Logo in Windows 8.1</a>
-        </li>
-         <li class="list-group-item">
-          <i class="fa fa-book fa-1x fa-fw" aria-hidden="true"></i>
-          <a routerLink="dashboard">Customize Start Screen Tiles Background Color, Text Color and Logo in Windows 8.1</a>
+          <a routerLink="{{content.routeLink}}">
+            <div [innerHTML]="content.question"></div>
+          </a>
         </li>
       </ul>
     </div>

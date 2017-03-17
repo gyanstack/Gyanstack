@@ -5,8 +5,9 @@ import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-routing.module';
 import {ServicesModule } from './main/services/services.module';
 
+
 // Imports for loading & configuring the in-memory web api
-import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+// import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './appServices/in-memory-data.service';
 
 import{VpnService} from './appServices/Vpn.service';
@@ -17,6 +18,7 @@ import { HeaderComponent } from './header/header.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { DashboardComponent } from './main/dashboard/dashboard.component';
 import { AdvertismentComponent } from './advertisment/advertisment.component';
+import { HeaderFeaturedComponent } from './header-featured/header-featured.component';
 
 @NgModule({
   declarations: [
@@ -24,13 +26,14 @@ import { AdvertismentComponent } from './advertisment/advertisment.component';
     HeaderComponent,
     SidebarComponent,
     DashboardComponent,
-    AdvertismentComponent
+    AdvertismentComponent,
+    HeaderFeaturedComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    InMemoryWebApiModule.forRoot(InMemoryDataService),
+    // InMemoryWebApiModule.forRoot(InMemoryDataService),
     AppRoutingModule,
     ServicesModule
   ],

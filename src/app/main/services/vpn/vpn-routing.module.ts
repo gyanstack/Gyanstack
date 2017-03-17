@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { VpnComponent } from './vpn.component';
-import { DetailsComponent } from './details.component';
+import { ServicesChildComponent } from '../service.child.component';
+import { DetailsComponent } from '../services.child.detail.component';
 
 const vpnRoutes: Routes = [
     {
@@ -19,7 +19,7 @@ const vpnRoutes: Routes = [
     },
     {
         path: '',
-        component: VpnComponent
+        component: ServicesChildComponent
     }
 ];
 

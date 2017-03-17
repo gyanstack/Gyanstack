@@ -1,19 +1,19 @@
 import { NgModule }       from '@angular/core';
 import { CommonModule }   from '@angular/common';
 
-import {BackupComponent } from './backup.component';
-import { DetailsComponent } from './details.component';
+import { SharedModule }   from '../shared.module';
+
 
 import {BackupRoutingModule } from './backup-routing.module';
 
 @NgModule({
     imports:[
         CommonModule,
-        BackupRoutingModule
+        BackupRoutingModule,
+        SharedModule
     ],
     declarations:[
-        BackupComponent,
-        DetailsComponent
+        
     ]
 })
 export class BackupModule {}

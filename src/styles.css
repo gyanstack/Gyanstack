@@ -78,3 +78,73 @@ h5{
 .card-header{
     padding: 5px !important;
 }
+
+.list-group-item{
+    border-color: #fccccc !important;
+}
+
+.divcentered {
+  position: fixed; /* or absolute */
+  top: 50%;
+  left: 30%;
+}
+
+.tile1{
+    /*height:100px;*/
+    background-color: #f16d64;
+    border-radius: 2px; 
+    margin: 5px; 
+    padding-top: 13px; 
+    text-align: center;
+    color: navajowhite
+}
+
+.tile2{
+    /*height:100px;*/
+    background-color: #35BEC1;
+    border-radius: 2px; 
+    margin: 5px; 
+    padding-top: 13px; 
+    text-align: center;
+    color: navajowhite
+}
+
+.tile3{
+    /*height:100px;*/
+    background-color: #E6A700;
+    border-radius: 2px; 
+    margin: 5px; 
+    padding-top: 13px; 
+    text-align: center;
+    color: navajowhite
+}
+
+.tile4{
+    height:50px;
+    background-color: #95C753;
+    border-radius: 2px; 
+    margin: 5px; 
+    padding-top: 13px; 
+    text-align: center;
+    color: navajowhite
+}
+
+.tile5{
+    height:50px;
+    background-color: #35BEC1;
+    border-radius: 2px; 
+    margin: 5px; 
+    padding-top: 13px; 
+    text-align: center;
+    color: navajowhite
+}
+
+.tile6{
+    height:50px;
+    background-color: #E6A700;
+    border-radius: 2px; 
+    margin: 5px; 
+    padding-top: 13px; 
+    text-align: center;
+    color: navajowhite
+}

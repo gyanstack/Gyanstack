@@ -144,6 +144,25 @@ export class InMemoryDataService implements InMemoryDbService {
       }
     ];
 
-    return { vpnContentList, vpnContentCompleteDescription, cloudContentList, cloudContentCompleteDescription };
+    let dashboardContentList = {
+      mostViewed: [
+        {
+
+        }
+      ],
+      dashboardContents: [
+        {
+
+        }
+      ]
+    };
+
+    return { 
+      vpnContentList, 
+      vpnContentCompleteDescription, 
+      cloudContentList, 
+      cloudContentCompleteDescription, 
+      dashboardContentList 
+    };
   }
 }

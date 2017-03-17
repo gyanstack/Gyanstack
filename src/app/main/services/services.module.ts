@@ -8,6 +8,7 @@ import { VpnModule } from './vpn/vpn.module';
 import { CloudModule } from './cloud/cloud.module';
 import { BackupModule } from './backup/backup.module';
 import { AntivirusModule } from './antivirus/antivirus.module';
+import { SharedModule }   from './shared.module';
 
 @NgModule({
     imports:[
@@ -16,7 +17,8 @@ import { AntivirusModule } from './antivirus/antivirus.module';
         VpnModule,
         CloudModule,
         BackupModule,
-        AntivirusModule
+        AntivirusModule,
+        SharedModule
     ],
     declarations:[
         ServicesComponent

@@ -1,24 +1,29 @@
 <app-header></app-header>
 <div class="container" style="padding: 50px 0px 0px 15px">
-  <div class="row">
-    <div class="col-sm-8 col-md-8" style="padding-top:12px">
-      <router-outlet style="padding: 0px"></router-outlet>
-    </div>
-    <div class="col-sm-4 col-md-4" style="padding-top:12px">
-      <app-advertisment></app-advertisment>
-    </div>
-  </div>
+	<div class="row">
+		<div class="col-md-12" style="padding-top:12px">
+			<app-header-featured></app-header-featured>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-12 col-md-12 col-lg-8" style="padding-top:12px">
+			<router-outlet style="padding: 0px"></router-outlet>
+		</div>
+		<div class="col-sm-12 col-md-12 col-lg-4" style="padding-top:12px">
+			<app-advertisment></app-advertisment>
+		</div>
+	</div>
 </div>
 <aside id="sticky-social">
-		<ul>
-			<li><a href="https://www.facebook.com/groups/Gyanstack/" class="entypo-facebook" target="_blank"><span>Facebook</span></a></li>
-			<li><a href="https://twitter.com" class="entypo-twitter" target="_blank"><span>Twitter</span></a></li>
-			<li><a href="https://plus.google.com/" class="entypo-gplus" target="_blank"><span>Google+</span></a></li>
-			<li><a href="https://in.linkedin.com/" class="entypo-linkedin" target="_blank"><span>LinkedIn</span></a></li>
-			<!--<li><a href="https://www.instagram.com/" class="entypo-instagrem" target="_blank"><span>Instagram</span></a></li>-->
-			<!--<li><a href="https://www.stumbleupon.com/" class="entypo-stumbleupon" target="_blank"><span>StumbleUpon</span></a></li>
+	<ul>
+		<li><a href="https://www.facebook.com/groups/Gyanstack/" class="entypo-facebook" target="_blank"><span>Facebook</span></a></li>
+		<li><a href="https://twitter.com" class="entypo-twitter" target="_blank"><span>Twitter</span></a></li>
+		<li><a href="https://plus.google.com/" class="entypo-gplus" target="_blank"><span>Google+</span></a></li>
+		<li><a href="https://in.linkedin.com/" class="entypo-linkedin" target="_blank"><span>LinkedIn</span></a></li>
+		<!--<li><a href="https://www.instagram.com/" class="entypo-instagrem" target="_blank"><span>Instagram</span></a></li>-->
+		<!--<li><a href="https://www.stumbleupon.com/" class="entypo-stumbleupon" target="_blank"><span>StumbleUpon</span></a></li>
 			<li><a href="https://in.pinterest.com/" class="entypo-pinterest" target="_blank"><span>Pinterest</span></a></li>
 			<li><a href="https://www.flickr.com/" class="entypo-flickr" target="_blank"><span>Flickr</span></a></li>
 			<li><a href="https://www.tumblr.com/" class="entypo-tumblr" target="_blank"><span>Tumblr</span></a></li>-->
-		</ul>
-	</aside>
+	</ul>
+</aside>

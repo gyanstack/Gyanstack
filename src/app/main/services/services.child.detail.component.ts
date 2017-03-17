@@ -7,12 +7,12 @@ import { VpnService } from 'app/appServices/Vpn.service';
 
 @Component({
     moduleId: module.id,
-    selector: 'app-vpnDetails',
-    templateUrl: '../services.detail.component.html'
+    selector: 'app-ServicesChildDetails',
+    templateUrl: './services.child.detail.component.html'
 })
 export class DetailsComponent implements OnInit {
     title: string;
-    content: BaseModel;
+    content: any;
     constructor(
         private route: ActivatedRoute,
         private vpnService: VpnService
@@ -24,7 +24,7 @@ export class DetailsComponent implements OnInit {
             .subscribe(v => this.title = v["title"]);
 
         this.route.params
-            .switchMap((params: Params) => this.vpnService.getVpnContentFullDescription(+params['id']))
-            .subscribe(vpnContent => this.content = vpnContent);
+            .switchMap((params: Params) => this.vpnService.getContentHtml())
+            .subscribe(html => this.content = html);
     }
 }

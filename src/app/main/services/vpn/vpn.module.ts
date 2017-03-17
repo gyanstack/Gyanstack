@@ -1,19 +1,17 @@
 import { NgModule }       from '@angular/core';
 import { CommonModule }   from '@angular/common';
-
-import {VpnComponent } from './vpn.component';
-import { DetailsComponent } from './details.component';
+import { SharedModule }   from '../shared.module';
 
 import {VpnRoutingModule } from './vpn-routing.module';
 
 @NgModule({
     imports:[
         CommonModule,
-        VpnRoutingModule
+        VpnRoutingModule,
+        SharedModule
     ],
     declarations:[
-        VpnComponent,
-        DetailsComponent
+        
     ]
 })
 export class VpnModule {}

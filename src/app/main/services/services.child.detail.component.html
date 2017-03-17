@@ -1,0 +1,111 @@
+<section class="mb-4" *ngIf="content">
+    <div class="author-box">
+        <div class="row">
+            <hr>
+            <div class="col-xs-12 col-sm-2">
+                <img src="./assets/myAvtar_2.jpg" class="img-fluid rounded-circle z-depth-1">
+            </div>
+            <div class=" col-xs-12 col-sm-10">
+                <p>M J</p>
+                <h3>
+                    <p>
+                        <u>Top Download Managers for your machine </u>
+                    </p>
+                </h3>
+                <div [innerHTML]="content">
+                </div>
+                <hr/>
+                <div class="post-description">
+                    <div class="stats">
+                        <a routerLink="/" class="btn btn-default stat-item">
+                            <i class="fa fa-thumbs-up icon"></i>12
+                        </a>
+                        <a routerLink="/" class="btn btn-default stat-item">
+                            <i class="fa fa-thumbs-down icon"></i>2
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="comments-list">
+        <div class="section-heading">
+            <h1>Comments <span class="tag blue">3</span></h1>
+        </div>
+        <div class="row">
+            <div class="col-sm-2 col-xs-12">
+                <img src="./assets/avatar_2.png">
+            </div>
+            <div class="col-sm-10 col-xs-12">
+                <a>
+                    <h3 class="user-name">Rohan S</h3>
+                </a>
+                <div class="card-data">
+                    <ul>
+                        <li class="comment-date"><i class="fa fa-clock-o"></i> 05/10/2015</li>
+                    </ul>
+                </div>
+                <p class="comment-text">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                    Excepteur sint occaecat cupidatat non proident.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2 col-xs-12">
+                <img src="./assets/avatar_2.png">
+            </div>
+            <div class="col-sm-10 col-xs-12">
+                <a>
+                    <h3 class="user-name">Meera T</h3>
+                </a>
+                <div class="card-data">
+                    <ul>
+                        <li class="comment-date"><i class="fa fa-clock-o"></i> 08/10/2015</li>
+                    </ul>
+                </div>
+                <p class="comment-text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem
+                    aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+                    Nemo enim ipsam voluptatem quia voluptas sit aspernatur.</p>
+
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="card">
+        <div class="card-header">
+            <h1 class="section-heading">Leave a comment </h1>
+        </div>
+        <!--Leave a reply form-->
+        <div class="list-group">
+            <div class="reply-form" style="padding: 5px;">
+
+                <div class="md-form">
+                    <i class="fa fa-user prefix"></i>
+                    <input type="text" id="form22" class="form-control">
+                    <label for="form22">Your name</label>
+                </div>
+
+                <div class="md-form">
+                    <i class="fa fa-envelope prefix"></i>
+                    <input type="text" id="form32" class="form-control">
+                    <label for="form32">Your email</label>
+                </div>
+
+                <div class="md-form">
+                    <i class="fa fa-pencil prefix"></i>
+                    <textarea type="text" id="form18" class="md-textarea" style="width: 100%"></textarea>
+                    <label for="form18">Your message</label>
+                </div>
+
+                <div class="text-xs-center">
+                    <button class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/.Leave a reply form-->
+
+</section>

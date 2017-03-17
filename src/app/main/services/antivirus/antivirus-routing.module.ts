@@ -1,10 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { AntivirusComponent } from './antivirus.component';
-import { DetailsComponent } from './details.component';
+import { ServicesChildComponent } from '../service.child.component';
+import { DetailsComponent } from '../services.child.detail.component';
 
 const vpnRoutes: Routes = [
+    {
+        path: 'create_vpn_connection/:id',
+        component: DetailsComponent
+    },
     {
         path: 'create_cloud/:id',
         component: DetailsComponent
@@ -19,7 +23,7 @@ const vpnRoutes: Routes = [
     },
     {
         path: '',
-        component: AntivirusComponent
+        component: ServicesChildComponent
     }
 ];
 
