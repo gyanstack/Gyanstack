@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { VpnService } from 'app/appServices/Vpn.service';
+import { ContentService } from 'app/appServices/content.service';
 import { DashboardModel } from 'app/appModels/DashboardModel';
 
 @Component({
@@ -11,10 +11,10 @@ import { DashboardModel } from 'app/appModels/DashboardModel';
 export class DashboardComponent implements OnInit {
   contentList: DashboardModel[] = [];
   isLoaded:boolean = true;
-  constructor(private vpnService: VpnService) { }
+  constructor(private contentService: ContentService) { }
 
   ngOnInit() {
-    this.vpnService.getDashboardContents()
+    this.contentService.getDashboardContents()
       .then(vpnContents => this.loadData(vpnContents));
   }
 

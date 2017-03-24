@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { BaseModel } from 'app/appModels/BaseModel';
+import { ContentService } from 'app/appServices/content.service';
 
 @Component({
   selector: 'app-advertisment',
@@ -8,11 +10,22 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 })
 export class AdvertismentComponent implements OnInit {
 
-  constructor(private sanitizer: DomSanitizer) { }
+  constructor(private sanitizer: DomSanitizer, private contentService: ContentService) { }
   gcsesearch: SafeHtml;
+  mostViewed: BaseModel[] = [];
   ngOnInit() {
+    this.initiateGoogleSearch();
+    this.getMostViewed();
+  }
+
+  getMostViewed(): void {
+    this.contentService.getMostViewed()
+      .then(contents => this.mostViewed = contents);
+  }
+
+  initiateGoogleSearch(): void {
     this.gcsesearch = this.sanitizer.bypassSecurityTrustHtml("<gcse:search></gcse:search>");
-      var cx = '012556502739128545047:0ugxtgpijge';
+    var cx = '012556502739128545047:0ugxtgpijge';
     var gcse = document.createElement('script');
     gcse.type = 'text/javascript';
     gcse.async = true;

@@ -22,10 +22,6 @@ const routes: Routes = [
         path: '**', 
         component: DashboardComponent 
     }
-    // { path: 'tips_n_tricks/:id', component: MainComponent },
-    // { path: 'Mobile', component: MainComponent },
-    // { path: 'Gadgets', component: MainComponent },
-    // { path: 'Miscellanious', component: MainComponent },
     // { path: 'Deals', component: MainComponent }
 ];
 

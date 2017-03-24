@@ -6,9 +6,9 @@
   <div class="list-group">
     <li class="list-group-item justify-content-between" *ngFor="let content of contentList">
       <img class="img-responsive user-photo" src="./assets/avatar_2.png" alt="user image">
-      <a routerLink="{{content.routeLink}}" routerLinkActive="active">{{content.question}}</a>
+      <a routerLink="{{content.routeLink}}" routerLinkActive="active">{{content.articleName}}</a>
       <p>
-        <span>{{content.answerShortDescription}}</span>
+        <span>{{content.articleDescription}}</span>
       </p>
       <a routerLink="{{content.routeLink}}" class="btn btn-default btn-sm">read more...</a>
     </li>

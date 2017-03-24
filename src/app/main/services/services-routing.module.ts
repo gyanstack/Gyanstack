@@ -12,24 +12,35 @@ const servicesRoutes: Routes = [
                 path: '',
                 children: [
                     {
-                        path: 'vpn',
-                        loadChildren: 'app/main/services/vpn/vpn.module#VpnModule',
-                        data: { title: 'Vpn services' }
+                        path: 'android',
+                        data: { title: 'Android' },
+                        loadChildren: 'app/main/services/android/android.module#AndroidModule'
+                        
                     },
                     {
-                        path: 'cloud',
-                        data: { title: 'Cloud services' },
-                        loadChildren: 'app/main/services/cloud/cloud.module#CloudModule'
+                        path: 'gadgets',
+                        data: { title: 'Gadgets' },
+                        loadChildren: 'app/main/services/gadgets/gadgets.module#GadgetsModule'
                     },
                     {
-                        path: 'backup',
-                        data: { title: 'Backup serices' },
-                        loadChildren: 'app/main/services/backup/backup.module#BackupModule'
+                        path: 'internet',
+                        data: { title: 'Internet' },
+                        loadChildren: 'app/main/services/internet/internet.module#InternetModule'
                     },
                     {
-                        path: 'antivirus',
-                        data: { title: 'Antivirus services' },
-                        loadChildren: 'app/main/services/antivirus/antivirus.module#AntivirusModule'
+                        path: 'ios',
+                        data: { title: 'Ios' },
+                        loadChildren: 'app/main/services/ios/ios.module#IosModule'
+                    },
+                    {
+                        path: 'mac',
+                        data: { title: 'Mac' },
+                        loadChildren: 'app/main/services/MAC/mac.module#MacModule'
+                    },
+                    {
+                        path: 'windows',
+                        data: { title: 'Windows' },
+                        loadChildren: 'app/main/services/windows/windows.module#WindowsModule'
                     },
                     {
                         path: '',

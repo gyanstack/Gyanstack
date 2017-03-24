@@ -1,9 +1,10 @@
 import 'rxjs/add/operator/switchMap';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
-
-import { BaseModel } from 'app/appModels/BaseModel';
-import { VpnService } from 'app/appServices/Vpn.service';
+import { Location }               from '@angular/common';
+import { ArticleModel } from 'app/appModels/ArticleModel';
+import { PostCommentModel } from 'app/appModels/PostCommentModel';
+import { ContentService } from 'app/appServices/content.service';
 
 @Component({
     moduleId: module.id,
@@ -12,10 +13,13 @@ import { VpnService } from 'app/appServices/Vpn.service';
 })
 export class DetailsComponent implements OnInit {
     title: string;
-    content: any;
+    isLoaded: boolean = false;
+    article: ArticleModel;
+    postComment:PostCommentModel;
+    private location: Location
     constructor(
         private route: ActivatedRoute,
-        private vpnService: VpnService
+        private contentService: ContentService
     ) { }
 
     ngOnInit() {
@@ -24,7 +28,24 @@ export class DetailsComponent implements OnInit {
             .subscribe(v => this.title = v["title"]);
 
         this.route.params
-            .switchMap((params: Params) => this.vpnService.getContentHtml())
-            .subscribe(html => this.content = html);
+            .switchMap((params: Params) => this.contentService.getChildContentData(+params['articleId']))
+            .subscribe(data => this.loadData(data));
+    }
+
+    loadData(model: ArticleModel): void {
+        this.isLoaded = false;
+        this.article = model;
+
+        this.contentService.getContentHtml(this.article.articlePath)
+            .then(html => this.article.contentHtml = html);
+    }
+
+    save(): void {
+        this.contentService.postUserComment(this.postComment)
+            .then(() => this.goBack());
+    }
+
+    goBack(): void {
+        this.location.back();
     }
 }

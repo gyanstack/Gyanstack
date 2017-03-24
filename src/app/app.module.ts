@@ -4,18 +4,11 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-routing.module';
 import {ServicesModule } from './main/services/services.module';
-
-
-// Imports for loading & configuring the in-memory web api
-// import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService }  from './appServices/in-memory-data.service';
-
-import{VpnService} from './appServices/Vpn.service';
+import{ContentService} from './appServices/content.service';
 
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { SidebarComponent } from './sidebar/sidebar.component';
 import { DashboardComponent } from './main/dashboard/dashboard.component';
 import { AdvertismentComponent } from './advertisment/advertisment.component';
 import { HeaderFeaturedComponent } from './header-featured/header-featured.component';
@@ -24,7 +17,6 @@ import { HeaderFeaturedComponent } from './header-featured/header-featured.compo
   declarations: [
     AppComponent,
     HeaderComponent,
-    SidebarComponent,
     DashboardComponent,
     AdvertismentComponent,
     HeaderFeaturedComponent
@@ -33,11 +25,10 @@ import { HeaderFeaturedComponent } from './header-featured/header-featured.compo
     BrowserModule,
     FormsModule,
     HttpModule,
-    // InMemoryWebApiModule.forRoot(InMemoryDataService),
     AppRoutingModule,
     ServicesModule
   ],
-  providers: [VpnService],
+  providers: [ContentService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

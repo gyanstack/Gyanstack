@@ -4,16 +4,16 @@ import { CommonModule }   from '@angular/common';
 import { SharedModule }   from '../shared.module';
 
 
-import {BackupRoutingModule } from './backup-routing.module';
+import {AndroidRoutingModule } from './android-routing.module';
 
 @NgModule({
     imports:[
         CommonModule,
-        BackupRoutingModule,
+        AndroidRoutingModule,
         SharedModule
     ],
     declarations:[
         
     ]
 })
-export class BackupModule {}
+export class AndroidModule {}

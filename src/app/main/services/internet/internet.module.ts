@@ -4,16 +4,16 @@ import { CommonModule }   from '@angular/common';
 import { SharedModule }   from '../shared.module';
 
 
-import {CloudRoutingModule } from './cloud-routing.module';
+import {InternetRoutingModule } from './internet-routing.module';
 
 @NgModule({
     imports:[
         CommonModule,
-        CloudRoutingModule,
+        InternetRoutingModule,
         SharedModule
     ],
     declarations:[
         
     ]
 })
-export class CloudModule {}
+export class InternetModule {}

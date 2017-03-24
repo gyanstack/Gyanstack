@@ -4,21 +4,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { ServicesChildComponent } from '../service.child.component';
 import { DetailsComponent } from '../services.child.detail.component';
 
-const vpnRoutes: Routes = [
+const routes: Routes = [
     {
-        path: 'create_vpn_connection/:id',
-        component: DetailsComponent
-    },
-    {
-        path: 'create_cloud/:id',
-        component: DetailsComponent
-    },
-    {
-        path: 'how_to_resolve_this_in_cloud/:id',
-        component: DetailsComponent
-    },
-    {
-        path: 'troubleshoot_vpn_connection/:id',
+        path: 'create_vpn_connection/:articleId',
         component: DetailsComponent
     },
     {
@@ -29,11 +17,11 @@ const vpnRoutes: Routes = [
 
 @NgModule({
     imports: [
-        RouterModule.forChild(vpnRoutes)
+        RouterModule.forChild(routes)
     ],
     exports: [
         RouterModule
     ]
 })
 
-export class AntivirusRoutingModule { }
+export class MacRoutingModule { }

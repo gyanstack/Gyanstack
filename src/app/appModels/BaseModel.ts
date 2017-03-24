@@ -1,7 +1,7 @@
 export class BaseModel {
-    id: number;
+    articleId: number;
     sectionId: string;
     routeLink: string;
-    question: string;
-    shortDescription: string;
+    articleName: string;
+    articleDescription: string;
 }

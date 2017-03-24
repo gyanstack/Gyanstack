@@ -6,15 +6,7 @@ import { DetailsComponent } from '../services.child.detail.component';
 
 const vpnRoutes: Routes = [
     {
-        path: 'create_vpn_connection/:id',
-        component: DetailsComponent
-    },
-    {
-        path: 'vpn_not_working/:id',
-        component: DetailsComponent
-    },
-    {
-        path: 'troubleshoot_vpn_connection/:id',
+        path: 'create_vpn_connection/:articleId',
         component: DetailsComponent
     },
     {
@@ -32,4 +24,4 @@ const vpnRoutes: Routes = [
     ]
 })
 
-export class VpnRoutingModule { }
+export class AndroidRoutingModule { }

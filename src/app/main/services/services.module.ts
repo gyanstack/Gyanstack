@@ -4,20 +4,24 @@ import { CommonModule }   from '@angular/common';
 import {ServicesComponent } from './services.component';
 
 import {ServicesRoutingModule } from './services-routing.module';
-import { VpnModule } from './vpn/vpn.module';
-import { CloudModule } from './cloud/cloud.module';
-import { BackupModule } from './backup/backup.module';
-import { AntivirusModule } from './antivirus/antivirus.module';
+import { AndroidModule } from './android/android.module';
+import { GadgetsModule } from './gadgets/gadgets.module';
+import { IosModule } from './ios/ios.module';
+import { InternetModule } from './internet/internet.module';
+import { MacModule } from './MAC/mac.module';
+import { WindowsModule } from './windows/windows.module';
 import { SharedModule }   from './shared.module';
 
 @NgModule({
     imports:[
         CommonModule,
         ServicesRoutingModule,
-        VpnModule,
-        CloudModule,
-        BackupModule,
-        AntivirusModule,
+        AndroidModule,
+        GadgetsModule,
+        IosModule,
+        InternetModule,
+        MacModule,
+        WindowsModule,
         SharedModule
     ],
     declarations:[

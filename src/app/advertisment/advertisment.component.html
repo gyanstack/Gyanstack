@@ -1,11 +1,20 @@
 <div class="card">
     <div class="google-media-search" [innerHTML]="gcsesearch"></div>
 </div>
-<div class="card">
+<div class="card" *ngIf="mostViewed">
   <div class="card-header">
    <h1> Most Viewed</h1>
   </div>
   <ul class="list-group textBlue">
+        <li class="list-group-item" *ngFor="let data of mostViewed">
+          <i class="fa fa-book fa-1x fa-fw" aria-hidden="true"></i>
+          <a routerLink="{{data.routeLink}}" >
+            <div [innerHTML]="data.articleName">
+            </div>
+          </a>
+        </li>
+      </ul>
+  <!--<ul class="list-group textBlue">
     <li class="list-group-item">
       <i class="fa fa-book fa-1x fa-fw" aria-hidden="true"></i>
       <a routerLink="Change_Background_Color_and_Image_of_Splash_Screen_in_Microsoft_Edge"><b>Windows 10 Tip:</b> Change Background Color and Image of Splash Screen in Microsoft Edge</a>
@@ -22,7 +31,7 @@
       <i class="fa fa-book fa-1x fa-fw" aria-hidden="true"></i>
       <a routerLink="dashboard">Customize Start Screen Tiles Background Color, Text Color and Logo in Windows 8.1</a>
     </li>
-  </ul>
+  </ul>-->
 </div>
 <div class="card">
   <ul class="list-group">

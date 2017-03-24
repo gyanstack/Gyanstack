@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BaseModel } from 'app/appModels/BaseModel';
-import { VpnService } from 'app/appServices/Vpn.service';
+import { ContentService } from 'app/appServices/content.service';
 
 @Component({
   moduleId: module.id,
@@ -14,7 +14,7 @@ export class ServicesChildComponent implements OnInit {
   contentList: BaseModel[] = [];
   constructor(
     private route: ActivatedRoute,
-    private vpnService: VpnService
+    private contentService: ContentService
   ) { 
     this.isLoaded = true;
   }
@@ -24,7 +24,7 @@ export class ServicesChildComponent implements OnInit {
       .data
       .subscribe(v => this.title = v["title"]);
 
-    this.vpnService.getServiceContents()
+    this.contentService.getServiceContents(this.title)
       .then(contents => this.loadData(contents));
   }
 
