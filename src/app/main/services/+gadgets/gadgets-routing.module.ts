@@ -6,7 +6,11 @@ import { DetailsComponent } from '../services.child.detail.component';
 
 const routes: Routes = [
     {
-        path: 'create_vpn_connection/:articleId',
+        path: 'smart_watches/:articleId',
+        component: DetailsComponent
+    },
+    {
+        path: 'Top_10_Women_personal_safety_apps/:articleId',
         component: DetailsComponent
     },
     {
@@ -24,4 +28,4 @@ const routes: Routes = [
     ]
 })
 
-export class WindowsRoutingModule { }
+export class GadgetsRoutingModule { }

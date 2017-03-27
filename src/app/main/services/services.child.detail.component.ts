@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Location }               from '@angular/common';
 import { ArticleModel } from 'app/appModels/ArticleModel';
+import { UserCommentsModel } from 'app/appModels/UserCommentsModel';
 import { PostCommentModel } from 'app/appModels/PostCommentModel';
 import { ContentService } from 'app/appServices/content.service';
 
@@ -15,12 +16,15 @@ export class DetailsComponent implements OnInit {
     title: string;
     isLoaded: boolean = false;
     article: ArticleModel;
+    userComments: UserCommentsModel[];
     postComment:PostCommentModel;
-    private location: Location
+    private location: Location;
     constructor(
         private route: ActivatedRoute,
         private contentService: ContentService
-    ) { }
+    ) { 
+        
+    }
 
     ngOnInit() {
         this.route
@@ -35,6 +39,7 @@ export class DetailsComponent implements OnInit {
     loadData(model: ArticleModel): void {
         this.isLoaded = false;
         this.article = model;
+        this.userComments = model.userComments;
 
         this.contentService.getContentHtml(this.article.articlePath)
             .then(html => this.article.contentHtml = html);

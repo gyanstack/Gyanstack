@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ContentService } from 'app/appServices/content.service';
-import { DashboardModel } from 'app/appModels/DashboardModel';
+import { BaseModel } from 'app/appModels/BaseModel';
 
 @Component({
   moduleId: module.id,
@@ -9,16 +9,16 @@ import { DashboardModel } from 'app/appModels/DashboardModel';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  contentList: DashboardModel[] = [];
+  contentList: BaseModel[] = [];
   isLoaded:boolean = true;
   constructor(private contentService: ContentService) { }
 
   ngOnInit() {
     this.contentService.getDashboardContents()
-      .then(vpnContents => this.loadData(vpnContents));
+      .then(contents => this.loadData(contents));
   }
 
-  loadData(model: DashboardModel[]): void {
+  loadData(model: BaseModel[]): void {
     this.isLoaded = false;
     this.contentList = model;
   }

@@ -12,7 +12,7 @@ const routes: Routes = [
     },
     { 
         path: 'services', 
-        loadChildren: 'app/main/services/services.module#ServicesModule' 
+        loadChildren: './main/services/services.module#ServicesModule' 
     },
     {
         path: '',

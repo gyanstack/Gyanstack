@@ -7,9 +7,9 @@
   </div>
   <ul class="list-group textBlue">
         <li class="list-group-item" *ngFor="let data of mostViewed">
-          <i class="fa fa-book fa-1x fa-fw" aria-hidden="true"></i>
-          <a routerLink="{{data.routeLink}}" >
-            <div [innerHTML]="data.articleName">
+          <!--<i class="fa fa-book fa-1x fa-fw" aria-hidden="true"></i>-->
+          <a routerLink="services/{{data.sectionName}}/{{data.routeLink}}" >
+            <div [innerHTML]="data.articleName" style="font-size: 13px;">
             </div>
           </a>
         </li>

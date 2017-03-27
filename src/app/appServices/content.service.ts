@@ -18,13 +18,13 @@ export class ContentService {
     constructor(private http: Http) {
     }
 
-    getDashboardContents(): Promise<DashboardModel[]> {
+    getDashboardContents(): Promise<BaseModel[]> {
         let params = new URLSearchParams();
-        params.set('limit', this.limit);
+        params.set('limit', '10');
         params.set('type', 'dashboard')
         return this.http.post(this.baseUrl, params)
             .toPromise()
-            .then(response => this.returnDataDashboardModel(response))
+            .then(response => this.returnDataBaseModel(response))
             .catch(this.handleError);
     }
 
@@ -41,7 +41,7 @@ export class ContentService {
     getMostViewed(): Promise<BaseModel[]> {
         let params = new URLSearchParams();
         params.set('type', 'mostViewed');
-        params.set('limit', this.limit);
+        params.set('limit', '10');
         return this.http.post(this.baseUrl, params)
             .toPromise()
             .then(response => this.returnDataBaseModel(response))
@@ -49,8 +49,6 @@ export class ContentService {
     }
 
     getChildContentData(articleId: number): Promise<ArticleModel> {
-        //const url = `${this.vpnContentDescriptionUrl}/${id}`;
-        //const url = 'http://Gyanstack.com/db/New.php';
         let params = new URLSearchParams();
         params.set('type', 'detail');
         params.set('articleId', '' + articleId);
@@ -86,7 +84,7 @@ export class ContentService {
     }
 
     private handleError(error: any): Promise<any> {
-        console.error('An error occurred', error); // for demo purposes only
+        console.error('An error occurred in the application', error); // for demo purposes only
         return Promise.reject(error.message || error);
     }
 }

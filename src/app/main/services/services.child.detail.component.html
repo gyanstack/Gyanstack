@@ -2,16 +2,16 @@
     <div class="author-box">
         <div class="row">
             <hr>
-            <div class="col-xs-12 col-sm-2">
-                <img src="./assets/myAvtar_2.jpg" class="img-fluid rounded-circle z-depth-1">
+            <div class="col-xs-12 col-sm-1">
+                <img src="./Content/Avatar/{{article.author}}.PNG" class="img-fluid rounded-circle z-depth-1">
             </div>
-            <div class=" col-xs-12 col-sm-10">
-                <p>M J</p>
-                <h3>
-                    <p>
-                        <u>{{article.articleName}}</u>
-                    </p>
-                </h3>
+            <div class="col-xs-12 col-sm-11" style="padding-bottom: 15px">
+                <span style="float:right;font-size: 11px" class="text-muted">posted by : {{article.author}} | {{article.updatedDate}}</span>
+                <h2>
+                    {{article.articleName}}
+                </h2>
+            </div>
+            <div class="col-xs-12 col-sm-12">
                 <div [innerHTML]="article.contentHtml">
                 </div>
                 <hr/>
@@ -29,7 +29,7 @@
         </div>
     </div>
 </section>
-<section *ngIf="article">
+<section *ngIf="userComments">
     <div class="comments-list">
         <div class="section-heading">
             <h1>Comments <span class="tag blue">3</span></h1>

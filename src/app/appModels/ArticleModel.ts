@@ -6,7 +6,8 @@ export class ArticleModel {
     sectionId: number;
     articleName: string;
     articlePath: string;
+    author: string;
+    updatedDate: string;
     public userComments: UserCommentsModel[];
     public contentHtml:string;
-    // public postComment: PostCommentModel;
 }

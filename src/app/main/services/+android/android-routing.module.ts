@@ -4,9 +4,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { ServicesChildComponent } from '../service.child.component';
 import { DetailsComponent } from '../services.child.detail.component';
 
-const routes: Routes = [
+const vpnRoutes: Routes = [
     {
-        path: 'create_vpn_connection/:articleId',
+        path: 'how_to_go_live_on_facebook/:articleId',
+        component: DetailsComponent
+    },
+    {
+        path: 'Wifi_hotspot_share_your_android_device_internet_connection_with_others/:articleId',
         component: DetailsComponent
     },
     {
@@ -17,11 +21,11 @@ const routes: Routes = [
 
 @NgModule({
     imports: [
-        RouterModule.forChild(routes)
+        RouterModule.forChild(vpnRoutes)
     ],
     exports: [
         RouterModule
     ]
 })
 
-export class InternetRoutingModule { }
+export class AndroidRoutingModule { }
