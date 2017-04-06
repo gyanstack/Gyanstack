@@ -14,6 +14,10 @@ const routes: Routes = [
         component: DetailsComponent
     },
     {
+        path: 'windows_installation_using_bootable_USB_Drive/:articleId',
+        component: DetailsComponent
+    },
+    {
         path: '',
         component: ServicesChildComponent
     }

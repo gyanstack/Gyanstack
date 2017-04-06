@@ -67,8 +67,11 @@ export class ContentService {
 
     postUserComment(postComment: PostCommentModel): Promise<PostCommentModel> {
         let params = new URLSearchParams();
-        params.set('name', 'postUserComment');
-        params.set('userComment', JSON.stringify(postComment));
+        params.set('type', 'postUserComment');
+        params.set('articleId', postComment.articleId + '');
+        params.set('comment', postComment.comment);
+        params.set('userName', postComment.userName);
+        params.set('email', postComment.userEmail);
         return this.http.post(this.baseUrl, params)
             .toPromise()
             .then(() => postComment)

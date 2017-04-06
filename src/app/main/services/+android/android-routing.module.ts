@@ -14,6 +14,10 @@ const vpnRoutes: Routes = [
         component: DetailsComponent
     },
     {
+        path: 'Tips_to_boost_your_Android_speed/:articleId',
+        component: DetailsComponent
+    },
+    {
         path: '',
         component: ServicesChildComponent
     }

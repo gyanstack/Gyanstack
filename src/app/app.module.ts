@@ -1,12 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+// import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-// import { CollapseDirective } from 'ng2-bootstrap'
 import { AppRoutingModule } from './app-routing.module';
 import {ServicesModule } from './main/services/services.module';
 import{ContentService} from './appServices/content.service';
-
+import {NgForm} from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -24,7 +23,7 @@ import { HeaderFeaturedComponent } from './header-featured/header-featured.compo
   ],
   imports: [
     BrowserModule,
-    FormsModule,
+    // FormsModule,
     HttpModule,
     AppRoutingModule,
     ServicesModule

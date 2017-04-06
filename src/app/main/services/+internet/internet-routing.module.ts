@@ -14,7 +14,7 @@ const routes: Routes = [
         component: DetailsComponent
     },
     {
-        path: 'how_to_block_nude_content_videos_in_youtube/:articleId',
+        path: 'how_to_block_inappropriate_content_videos_in_youtube/:articleId',
         component: DetailsComponent
     },
     {
