@@ -26,13 +26,15 @@ export class PostComment implements OnInit {
         if (f.valid) {
             this.contentService.postUserComment(f.value)
                 .then(() => this.updateCommentList(f));
+        } else {
+            this.submitted = false;
         }
     }
 
     updateCommentList(form: NgForm) {
-        this.submitted = true;
+        let userComment = form.value as PostCommentModel;
         form.reset();
-        this.userComment = new PostCommentModel(form.value.articleId)
-        this.onSubmitted.emit(form.value);
+        this.userComment = new PostCommentModel(userComment.articleId)
+        this.onSubmitted.emit(userComment);
     }
 }

@@ -5,7 +5,7 @@
             <i class="fa fa-user prefix"></i> <label for="form22">Your name</label>
             <input type="text" name="userName" #userName="ngModel" required minlength="2" class="form-control"
              [(ngModel)]="userComment.userName">
-            <small [hidden]="(userName.valid && !f.submitted) || (userName.pristine && !f.submitted)"  style="color:indianred; font-weight: bold">
+            <small [hidden]="userName.valid || (userName.pristine && !f.submitted)"  style="color:indianred; font-weight: bold">
             Please enter your Name (minimum 2 characters).
         </small>
         </div>
@@ -13,7 +13,7 @@
             <i class="fa fa-envelope prefix"></i> <label for="form32">Your email</label>
             <input type="email" name="userEmail" #userEmail="ngModel" required minlength="5" class="form-control"
              [(ngModel)]="userComment.userEmail" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
-            <small [hidden]="(userEmail.valid && !f.submitted) || (userEmail.pristine && !f.submitted)"  style="color:indianred; font-weight: bold">
+            <small [hidden]="userEmail.valid || (userEmail.pristine && !f.submitted)"  style="color:indianred; font-weight: bold">
             Please enter your valid Email (minimum 5 characters).
         </small>
         </div>
@@ -22,7 +22,7 @@
             <textarea type="text" name="comment" #comment="ngModel" required minlength="5" maxlength="100" class="md-textarea"
                 [(ngModel)]="userComment.comment" style="width: 100%">
                     </textarea>
-            <small [hidden]="(comment.valid && !f.submitted) || (comment.pristine && !f.submitted)" style="color:indianred; font-weight: bold">
+            <small [hidden]="comment.valid || (comment.pristine && !f.submitted)" style="color:indianred; font-weight: bold">
             Please enter comment (minimum 5 characters).
         </small>
         </div>
