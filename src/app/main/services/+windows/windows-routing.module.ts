@@ -4,21 +4,17 @@ import { RouterModule, Routes } from '@angular/router';
 import { ServicesChildComponent } from '../service.child.component';
 import { DetailsComponent } from '../services.child.detail.component';
 
-const vpnRoutes: Routes = [
+const routes: Routes = [
     {
-        path: 'create_vpn_connection/:id',
+        path: 'how_to_open_command_prompt_in_windows_7_8_10/:articleId',
         component: DetailsComponent
     },
     {
-        path: 'create_cloud/:id',
+        path: 'desktop_screen_rotate_solution/:articleId',
         component: DetailsComponent
     },
     {
-        path: 'how_to_resolve_this_in_cloud/:id',
-        component: DetailsComponent
-    },
-    {
-        path: 'troubleshoot_vpn_connection/:id',
+        path: 'windows_installation_using_bootable_USB_Drive/:articleId',
         component: DetailsComponent
     },
     {
@@ -29,11 +25,11 @@ const vpnRoutes: Routes = [
 
 @NgModule({
     imports: [
-        RouterModule.forChild(vpnRoutes)
+        RouterModule.forChild(routes)
     ],
     exports: [
         RouterModule
     ]
 })
 
-export class AntivirusRoutingModule { }
+export class WindowsRoutingModule { }

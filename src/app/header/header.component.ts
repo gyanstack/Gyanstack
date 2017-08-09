@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
 import { FacebookService, FacebookLoginResponse, FacebookInitParams } from 'ng2-facebook-sdk';
 
 @Component({
@@ -9,6 +9,7 @@ import { FacebookService, FacebookLoginResponse, FacebookInitParams } from 'ng2-
   providers: [FacebookService]
 })
 export class HeaderComponent implements OnInit {
+  @ViewChild('navbarToggler') navbarToggler:ElementRef;
   constructor(private fb: FacebookService) {
   }
 
@@ -17,6 +18,16 @@ export class HeaderComponent implements OnInit {
       (response: FacebookLoginResponse) => console.log(response),
       (error: any) => console.error(error)
     );
+  }
+
+  navBarTogglerIsVisible() {
+    return this.navbarToggler.nativeElement.offsetParent !== null;
+  }
+
+  collapseNav() {
+    if (this.navBarTogglerIsVisible()) {
+      this.navbarToggler.nativeElement.click();
+    }
   }
 
   ngOnInit() {

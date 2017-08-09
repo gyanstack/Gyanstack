@@ -44,7 +44,7 @@ h1{
 }
 
 h2{
-    font-size: 14px;
+    font-size: 22px !important;
 }
 
 h3{
@@ -147,4 +147,20 @@ h5{
     padding-top: 13px; 
     text-align: center;
     color: navajowhite
+}
+
+.text{
+    font-size: 15px !important;
+}
+
+.text div ul li{
+    font-size: 15px !important;
+}
+
+p{
+    font-size: 15px !important;
+}
+
+.fbMarginTop{
+margin-top: 25px;
 }

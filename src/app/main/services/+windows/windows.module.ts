@@ -1,17 +1,19 @@
 import { NgModule }       from '@angular/core';
 import { CommonModule }   from '@angular/common';
+
 import { SharedModule }   from '../shared.module';
 
-import {VpnRoutingModule } from './vpn-routing.module';
+
+import {WindowsRoutingModule } from './windows-routing.module';
 
 @NgModule({
     imports:[
         CommonModule,
-        VpnRoutingModule,
+        WindowsRoutingModule,
         SharedModule
     ],
     declarations:[
         
     ]
 })
-export class VpnModule {}
+export class WindowsModule {}

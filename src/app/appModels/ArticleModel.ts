@@ -1,11 +1,13 @@
 import { UserCommentsModel } from './UserCommentsModel';
-import { PostCommentModel } from './PostCommentModel';
+// import { PostCommentModel } from './PostCommentModel';
 
 export class ArticleModel {
-    id: number;
+    articleId: number;
     sectionId: number;
-    question: string;
+    articleName: string;
     articlePath: string;
-    userComments: UserCommentsModel[];
-    postComment: PostCommentModel;
+    author: string;
+    updatedDate: string;
+    public userComments: UserCommentsModel[];
+    public contentHtml:string;
 }

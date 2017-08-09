@@ -4,17 +4,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { ServicesChildComponent } from '../service.child.component';
 import { DetailsComponent } from '../services.child.detail.component';
 
-const vpnRoutes: Routes = [
+const routes: Routes = [
     {
-        path: 'create_vpn_connection/:id',
+        path: 'smart_watches/:articleId',
         component: DetailsComponent
     },
     {
-        path: 'vpn_not_working/:id',
-        component: DetailsComponent
-    },
-    {
-        path: 'troubleshoot_vpn_connection/:id',
+        path: 'Top_10_Women_personal_safety_apps/:articleId',
         component: DetailsComponent
     },
     {
@@ -25,11 +21,11 @@ const vpnRoutes: Routes = [
 
 @NgModule({
     imports: [
-        RouterModule.forChild(vpnRoutes)
+        RouterModule.forChild(routes)
     ],
     exports: [
         RouterModule
     ]
 })
 
-export class VpnRoutingModule { }
+export class GadgetsRoutingModule { }

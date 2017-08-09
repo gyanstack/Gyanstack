@@ -1,6 +1,12 @@
 export class PostCommentModel {
-    articleId: number;
-    userName: string;
-    userEmail: string;
-    comment: string
+
+    constructor(articleId:number) {
+        this.articleId = articleId;
+    }
+
+    public articleId: number;
+    public userName: string;
+    public userEmail: string;
+    public comment: string;
+
 }

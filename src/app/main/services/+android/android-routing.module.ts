@@ -6,19 +6,15 @@ import { DetailsComponent } from '../services.child.detail.component';
 
 const vpnRoutes: Routes = [
     {
-        path: 'create_vpn_connection/:id',
+        path: 'how_to_go_live_on_facebook/:articleId',
         component: DetailsComponent
     },
     {
-        path: 'create_cloud/:id',
+        path: 'Wifi_hotspot_share_your_android_device_internet_connection_with_others/:articleId',
         component: DetailsComponent
     },
     {
-        path: 'how_to_resolve_this_in_cloud/:id',
-        component: DetailsComponent
-    },
-    {
-        path: 'troubleshoot_vpn_connection/:id',
+        path: 'Tips_to_boost_your_Android_speed/:articleId',
         component: DetailsComponent
     },
     {
@@ -36,4 +32,4 @@ const vpnRoutes: Routes = [
     ]
 })
 
-export class BackupRoutingModule { }
+export class AndroidRoutingModule { }

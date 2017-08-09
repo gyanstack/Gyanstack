@@ -4,16 +4,16 @@ import { CommonModule }   from '@angular/common';
 import { SharedModule }   from '../shared.module';
 
 
-import {AntivirusRoutingModule } from './antivirus-routing.module';
+import {NetworkingRoutingModule } from './networking-routing.module';
 
 @NgModule({
     imports:[
         CommonModule,
-        AntivirusRoutingModule,
+        NetworkingRoutingModule,
         SharedModule
     ],
     declarations:[
         
     ]
 })
-export class AntivirusModule {}
+export class NetworkingModule {}
