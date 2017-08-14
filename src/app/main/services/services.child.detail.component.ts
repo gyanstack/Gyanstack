@@ -31,12 +31,12 @@ export class DetailsComponent implements OnInit {
         this.route
             .data
             .subscribe(v => this.title = v["title"]);
-
-        this.route.params
-            .switchMap((params: Params) => this.contentService.getChildContentData(+params['articleId']))
+        this.route.url
+            //.switchMap((params: Params) => this.contentService.getChildContentData(+params['articleId']))
+            .switchMap((params: Params) => this.contentService.getChildContentData(+params[1].path))
             .subscribe(data => this.loadData(data));
-
-            this.userComment = {
+        debugger
+        this.userComment = {
             articleId: +this.route.snapshot.params['articleId'],
             comment: '',
             userEmail: '',

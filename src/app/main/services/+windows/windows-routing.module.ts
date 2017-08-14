@@ -20,6 +20,10 @@ const routes: Routes = [
     {
         path: '',
         component: ServicesChildComponent
+    },
+    { 
+        path: '**', 
+        component: DetailsComponent 
     }
 ];
 
