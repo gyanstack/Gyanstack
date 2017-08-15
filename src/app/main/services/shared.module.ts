@@ -6,6 +6,8 @@ import { FormsModule, Validators } from '@angular/forms';
 import { PostComment } from './postComment.component';
 import { ServicesChildComponent } from './service.child.component';
 import { DetailsComponent } from './services.child.detail.component';
+import { CeiboShare } from 'ng2-social-share';
+
 
 @NgModule({
     imports:[
@@ -16,7 +18,8 @@ import { DetailsComponent } from './services.child.detail.component';
     declarations:[
         ServicesChildComponent,
         DetailsComponent,
-        PostComment
+        PostComment,
+        CeiboShare
     ]
 })
 export class SharedModule {}

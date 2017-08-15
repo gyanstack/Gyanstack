@@ -18,8 +18,8 @@ const servicesRoutes: Routes = [
                         
                     },
                     {
-                        path: 'Gadgets',
-                        data: { title: 'Gadgets' },
+                        path: 'Miscellaneous',
+                        data: { title: 'Miscellaneous' },
                         loadChildren: './+gadgets/gadgets.module#GadgetsModule'
                     },
                     {

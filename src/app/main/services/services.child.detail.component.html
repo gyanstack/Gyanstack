@@ -16,13 +16,21 @@
                 </div>
                 <div class="post-description">
                     <div class="stats">
-                <hr/>
+                        <hr/>
                         <a routerLink="/" class="btn btn-default stat-item">
                             <i class="fa fa-thumbs-up icon"></i>12
                         </a>
                         <a routerLink="/" class="btn btn-default stat-item">
                             <i class="fa fa-thumbs-down icon"></i>2
                         </a>
+                        <span class="pull-right"> <b>Share : </b>
+                        <button ceiboShare  [facebook]="{u: repoUrl}"><i class="fa fa-facebook" aria-hidden="true"></i></button>
+                        <button ceiboShare  [linkedIn]="{url:repoUrl}"><i class="fa fa-linkedin" aria-hidden="true"></i></button>
+                        <button ceiboShare  [twitter]="{url:repoUrl, text:'Checkout this awesome ng2 social share directive', hashtags:'angular2, social, ceiboIT'}">
+                            <i class="fa fa-twitter" aria-hidden="true"></i>
+                        </button>
+                        <button ceiboShare  [googlePlus]="{url:repoUrl}"><i class="fa fa-google-plus" aria-hidden="true"></i></button>
+                        </span>
                     </div>
                 </div>
             </div>
@@ -59,7 +67,7 @@
             <h1 class="section-heading">Leave a comment </h1>
         </div>
         <div class="list-group">
-            <post-comment [userComment] = "userComment" (onSubmitted)="updateCommentList($event)"></post-comment>
+            <post-comment [userComment]="userComment" (onSubmitted)="updateCommentList($event)"></post-comment>
             <!--<div class="reply-form" style="padding: 5px;">
 
                 <div class="md-form">

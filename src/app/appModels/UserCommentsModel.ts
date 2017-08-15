@@ -3,6 +3,7 @@ export class UserCommentsModel {
         this.comment = comment;
         this.email = email;
         this.userName = name;
+        this.date = new Date().toDateString()
     }
     id: number;
     date: string;

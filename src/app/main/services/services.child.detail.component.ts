@@ -7,41 +7,50 @@ import { ArticleModel } from 'app/appModels/ArticleModel';
 import { UserCommentsModel } from 'app/appModels/UserCommentsModel';
 import { PostCommentModel } from 'app/appModels/PostCommentModel';
 import { ContentService } from 'app/appServices/content.service';
+import { CeiboShare } from 'ng2-social-share';
 
 @Component({
     moduleId: module.id,
     selector: 'app-ServicesChildDetails',
     templateUrl: './services.child.detail.component.html'
 })
+
 export class DetailsComponent implements OnInit {
     title: string;
     isLoaded: boolean = false;
     article: ArticleModel;
     userComments: UserCommentsModel[];
+    repoUrl: string;
     private location: Location;
     public userComment: PostCommentModel;
     constructor(
         private route: ActivatedRoute,
         private contentService: ContentService
     ) {
-
     }
-
+    
     ngOnInit() {
         this.route
             .data
             .subscribe(v => this.title = v["title"]);
+        let articleId: number;
+        let articlePath: string;
+        this.route.url.subscribe(params =>
+            articleId = +params[1].path
+        )
+        
         this.route.url
-            //.switchMap((params: Params) => this.contentService.getChildContentData(+params['articleId']))
-            .switchMap((params: Params) => this.contentService.getChildContentData(+params[1].path))
+            .switchMap((params: Params) => this.contentService.getChildContentData(articleId))
             .subscribe(data => this.loadData(data));
-        debugger
+
         this.userComment = {
-            articleId: +this.route.snapshot.params['articleId'],
+            articleId: articleId,
             comment: '',
             userEmail: '',
             userName: ''
         }
+
+        this.repoUrl = window.location.href;
     }
 
     loadData(model: ArticleModel): void {
