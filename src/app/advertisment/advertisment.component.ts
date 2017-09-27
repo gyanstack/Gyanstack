@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
-import { BaseModel } from 'app/appModels/BaseModel';
+import { ArticleModel } from 'app/appModels/ArticleModel';
 import { ContentService } from 'app/appServices/content.service';
 
 @Component({
@@ -12,7 +12,7 @@ export class AdvertismentComponent implements OnInit {
 
   constructor(private sanitizer: DomSanitizer, private contentService: ContentService) { }
   gcsesearch: SafeHtml;
-  mostViewed: BaseModel[] = [];
+  mostViewed: ArticleModel[] = [];
   ngOnInit() {
     this.initiateGoogleSearch();
     this.getMostViewed();

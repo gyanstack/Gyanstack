@@ -1,60 +1,64 @@
 import { Injectable } from '@angular/core';
-import { Headers, Http, Jsonp, URLSearchParams } from '@angular/http';
+import { Headers, Http, Jsonp, URLSearchParams, RequestOptions } from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
 
-import { BaseModel } from '../appModels/BaseModel';
 import { ArticleModel } from '../appModels/ArticleModel';
-import { DashboardModel } from '../appModels/DashboardModel';
 import { PostCommentModel } from '../appModels/PostCommentModel';
 
 @Injectable()
 export class ContentService {
     private headers = new Headers({ 'Content-Type': 'application/json' });
-    private baseUrl = 'http://Gyanstack.com/db/process/index.php';
-    private dashboardContentUrl = 'http://Gyanstack.com/db/dashboard.php';
+    //private baseUrl = 'http://localhost:55428/api/';
+    private baseUrl = 'http://admin.Gyanstack.com/api/';
+    //private dashboardContentUrl = 'http://Gyanstack.com/db/dashboard.php';
     private limit = "5"
 
     constructor(private http: Http) {
     }
 
-    getDashboardContents(): Promise<BaseModel[]> {
+    getDashboardContents(): Promise<ArticleModel[]> {
+        let requestOptions = new RequestOptions();
         let params = new URLSearchParams();
-        params.set('limit', '10');
-        params.set('type', 'dashboard')
-        return this.http.post(this.baseUrl, params)
+        params.set('count', '10');
+        requestOptions.search = params;
+        return this.http.get(this.baseUrl + "DashboardApi/GetRecent/10")
             .toPromise()
             .then(response => this.returnDataBaseModel(response))
             .catch(this.handleError);
     }
 
-    getServiceContents(method: string): Promise<BaseModel[]> {
+    getMostViewed(): Promise<ArticleModel[]> {
+        let requestOptions = new RequestOptions();
+        let params = new URLSearchParams();
+        params.set('count', '10');
+        requestOptions.search = params;
+        return this.http.get(this.baseUrl + "DashboardApi/GetMostViewed/10")
+            .toPromise()
+            .then(response => this.returnDataBaseModel(response))
+            .catch(this.handleError);
+    }
+
+    getServiceContents(method: string): Promise<ArticleModel[]> {
+        let requestOptions = new RequestOptions();
         let params = new URLSearchParams();
         params.set('name', method);
-        params.set('type', 'list')
-        return this.http.post(this.baseUrl, params)
-            .toPromise()
-            .then(response => this.returnDataBaseModel(response))
-            .catch(this.handleError);
-    }
-
-    getMostViewed(): Promise<BaseModel[]> {
-        let params = new URLSearchParams();
-        params.set('type', 'mostViewed');
-        params.set('limit', '10');
-        return this.http.post(this.baseUrl, params)
+        requestOptions.search = params;
+        return this.http.get(this.baseUrl + "DashboardApi/GetList/" + method)
             .toPromise()
             .then(response => this.returnDataBaseModel(response))
             .catch(this.handleError);
     }
 
     getChildContentData(articleId: number): Promise<ArticleModel> {
+        let requestOptions = new RequestOptions();
         let params = new URLSearchParams();
-        params.set('type', 'detail');
-        params.set('articleId', '' + articleId);
-        return this.http.post(this.baseUrl, params)
+        params.set('id', '' + articleId);
+        requestOptions.search = params;
+
+        return this.http.get(this.baseUrl + "ArticleApi/GetDetail/" + articleId)
             .toPromise()
-            .then(response => response.json().Data as ArticleModel)
+            .then(response => this.returnArticleModel(response))
             .catch(this.handleError);
     }
 
@@ -67,23 +71,36 @@ export class ContentService {
 
     postUserComment(postComment: PostCommentModel): Promise<PostCommentModel> {
         let params = new URLSearchParams();
-        params.set('type', 'postUserComment');
         params.set('articleId', postComment.articleId + '');
         params.set('comment', postComment.comment);
         params.set('userName', postComment.userName);
-        params.set('email', postComment.userEmail);
-        return this.http.post(this.baseUrl, params)
+        params.set('userEmail', postComment.userEmail);
+        return this.http.post(this.baseUrl + "ArticleApi/PostComment/", params)
             .toPromise()
             .then(() => postComment)
             .catch(this.handleError);
     }
 
+    updateLike(id: number, action: string): void {
+        let params = new URLSearchParams();
+        params.set('articleId', id + '');
+        params.set('action', action);
+        this.http.post(this.baseUrl + "ArticleApi/UpdateLike", params);
+    }
+
+    private returnArticleModel(response: any): any {
+        let result = response.json() as ArticleModel;
+        return result;
+    }
+
     private returnDataBaseModel(response: any): any {
-        return response.json().Data as BaseModel[];
+        let result = response.json() as ArticleModel[];
+        return result;
     }
 
     private returnDataDashboardModel(response: any): any {
-        return response.json().Data as DashboardModel[];
+        let result = response.json() as ArticleModel[];
+        return result;
     }
 
     private handleError(error: any): Promise<any> {

@@ -1,13 +1,18 @@
 import { UserCommentsModel } from './UserCommentsModel';
-// import { PostCommentModel } from './PostCommentModel';
 
 export class ArticleModel {
-    articleId: number;
-    sectionId: number;
-    articleName: string;
-    articlePath: string;
+    id: number;
+    name: string;
+    path: string;
+    route: string;
     author: string;
-    updatedDate: string;
+    userAvatar: string;
+    createdDate: string;
+    subsectionId: number;
+    section: string;
+    subsection: string;
+    likeCount: number;
+    dislikeCount: number;
     public userComments: UserCommentsModel[];
-    public contentHtml:string;
+    public contentHtml: string;
 }

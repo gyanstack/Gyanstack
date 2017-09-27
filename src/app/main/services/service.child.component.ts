@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { BaseModel } from 'app/appModels/BaseModel';
+import { ArticleModel } from 'app/appModels/ArticleModel';
 import { ContentService } from 'app/appServices/content.service';
 
 @Component({
@@ -11,7 +11,7 @@ import { ContentService } from 'app/appServices/content.service';
 export class ServicesChildComponent implements OnInit {
   title: string;
   isLoaded: boolean = false;
-  contentList: BaseModel[] = [];
+  articleList: ArticleModel[] = [];
   constructor(
     private route: ActivatedRoute,
     private contentService: ContentService
@@ -28,9 +28,8 @@ export class ServicesChildComponent implements OnInit {
       .then(contents => this.loadData(contents));
   }
 
-  loadData(model: BaseModel[]): void {
+  loadData(model: ArticleModel[]): void {
     this.isLoaded = false;
-    this.contentList = model;
+    this.articleList = model;
   }
-
 }

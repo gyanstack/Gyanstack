@@ -28,7 +28,7 @@ export class DetailsComponent implements OnInit {
         private contentService: ContentService
     ) {
     }
-    
+
     ngOnInit() {
         this.route
             .data
@@ -38,7 +38,7 @@ export class DetailsComponent implements OnInit {
         this.route.url.subscribe(params =>
             articleId = +params[1].path
         )
-        
+
         this.route.url
             .switchMap((params: Params) => this.contentService.getChildContentData(articleId))
             .subscribe(data => this.loadData(data));
@@ -57,12 +57,23 @@ export class DetailsComponent implements OnInit {
         this.isLoaded = false;
         this.article = model;
         this.userComments = model.userComments;
-        this.contentService.getContentHtml(this.article.articlePath)
+        this.contentService.getContentHtml(this.article.path)
             .then(html => this.article.contentHtml = html);
     }
 
     updateCommentList(model: PostCommentModel): void {
         let userComment = new UserCommentsModel(model.comment, model.userEmail, model.userName);
         this.userComments.push(userComment);
+    }
+
+    updateLike(id:number, action:string){
+        if(action == "up"){
+            this.article.likeCount++;
+        }
+        if(action == "down"){
+            this.article.dislikeCount++;
+        }
+
+        this.contentService.updateLike(id, action);
     }
 }

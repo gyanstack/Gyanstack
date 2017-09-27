@@ -2,14 +2,14 @@
     <div class="google-media-search" [innerHTML]="gcsesearch"></div>
 </div>
 <div class="card" *ngIf="mostViewed">
-  <div class="card-header">
-   <h1> Most Viewed</h1>
-  </div>
+  <div class="card-header default-color-dark white-text">
+        <b>Most Viewed</b>
+    </div>
   <ul class="list-group textBlue">
-        <li class="list-group-item" *ngFor="let data of mostViewed">
+        <li class="list-group-item" *ngFor="let article of mostViewed">
           <!--<i class="fa fa-book fa-1x fa-fw" aria-hidden="true"></i>-->
-          <a routerLink="services/{{data.sectionName}}/{{data.routeLink}}" >
-            <div [innerHTML]="data.articleName" style="font-size: 13px;">
+          <a routerLink="services/{{article.subsection}}/{{article.route}}/{{article.id}}" >
+            <div [innerHTML]="article.name" style="font-size: 14px; color:rebeccapurple">
             </div>
           </a>
         </li>
@@ -36,7 +36,7 @@
 <div class="card">
   <ul class="list-group">
     <li class="list-group-item justify-content-between">
-      <h1>Connect with us...</h1>
+      <b>Connect with us...</b>
     </li>
     <li class="list-group-item justify-content-between">
       <span class="text-muted">Like us on Facebook...</span>

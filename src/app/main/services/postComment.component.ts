@@ -19,7 +19,6 @@ export class PostComment implements OnInit {
     }
 
     ngOnInit() {
-
     }
 
     save(f: NgForm) {
