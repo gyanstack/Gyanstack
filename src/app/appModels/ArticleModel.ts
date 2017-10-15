@@ -6,6 +6,7 @@ export class ArticleModel {
     path: string;
     route: string;
     author: string;
+    description: string;
     userAvatar: string;
     createdDate: string;
     subsectionId: number;

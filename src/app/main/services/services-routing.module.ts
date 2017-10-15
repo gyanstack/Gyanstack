@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes} from '@angular/router';
+import { Title, Meta } from '@angular/platform-browser';
 
 import { ServicesComponent } from './services.component';
 
@@ -15,7 +16,7 @@ const servicesRoutes: Routes = [
                         path: 'Android',
                         data: { title: 'Android' },
                         loadChildren: './+android/android.module#AndroidModule'
-                        
+
                     },
                     {
                         path: 'Miscellaneous',
@@ -61,4 +62,9 @@ const servicesRoutes: Routes = [
     ]
 })
 
-export class ServicesRoutingModule { }
+export class ServicesRoutingModule {
+    constructor(
+
+    ) {
+    }
+}

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, NavigationEnd  } from '@angular/router';
 import { ArticleModel } from 'app/appModels/ArticleModel';
 import { ContentService } from 'app/appServices/content.service';
 
@@ -14,7 +14,8 @@ export class ServicesChildComponent implements OnInit {
   articleList: ArticleModel[] = [];
   constructor(
     private route: ActivatedRoute,
-    private contentService: ContentService
+    private contentService: ContentService,
+    private router: Router
   ) { 
     this.isLoaded = true;
   }
@@ -26,6 +27,13 @@ export class ServicesChildComponent implements OnInit {
 
     this.contentService.getServiceContents(this.title)
       .then(contents => this.loadData(contents));
+
+      this.router.events.subscribe((evt) => {
+            if (!(evt instanceof NavigationEnd)) {
+                return;
+            }
+            window.scrollTo(0, 0);
+        });
   }
 
   loadData(model: ArticleModel[]): void {

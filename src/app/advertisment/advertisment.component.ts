@@ -14,7 +14,7 @@ export class AdvertismentComponent implements OnInit {
   gcsesearch: SafeHtml;
   mostViewed: ArticleModel[] = [];
   ngOnInit() {
-    this.initiateGoogleSearch();
+    //this.initiateGoogleSearch();
     this.getMostViewed();
   }
 

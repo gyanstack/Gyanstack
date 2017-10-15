@@ -19,7 +19,6 @@ export class DashboardComponent implements OnInit {
   }
 
   loadData(model: ArticleModel[]): void {
-    debugger;
     this.isLoaded = false;
     this.articleList = model;
   }

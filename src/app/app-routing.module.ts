@@ -22,7 +22,6 @@ const routes: Routes = [
         path: '**', 
         component: DashboardComponent 
     }
-    // { path: 'Deals', component: MainComponent }
 ];
 
 @NgModule({

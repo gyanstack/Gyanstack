@@ -1,37 +1,44 @@
-<div class="card">
+<!-- <div class="card">
     <div class="google-media-search" [innerHTML]="gcsesearch"></div>
-</div>
+</div> -->
+<!-- <div class="card">
+  <iframe style="width:120px;height:240px; margin-left:20px" marginwidth="0" marginheight="0" scrolling="no" frameborder="0"
+    src="//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=IN&source=ac&ref=qf_br_asin_til&ad_type=product_link&tracking_id=gyanstackamaz-21&marketplace=amazon&region=IN&placement=B01MU2AWLB&asins=B01MU2AWLB&linkId=2cedb55db82984a2bc76b75d32eab8e7&show_border=true&link_opens_in_new_window=true&price_color=333333&title_color=0066c0&bg_color=f5ebeb">
+  </iframe>
+  <iframe style="width:120px;height:240px; float:right; margin-right:20px" marginwidth="0" marginheight="0" scrolling="no"
+    frameborder="0" src="//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=IN&source=ac&ref=qf_sp_asin_til&ad_type=product_link&tracking_id=gyanstackamaz-21&marketplace=amazon&region=IN&placement=B00UP4FYP2&asins=B00UP4FYP2&linkId=a3796996bfd1c49181e4c284821dbc82&show_border=true&link_opens_in_new_window=true&price_color=333333&title_color=0066c0&bg_color=f5ebeb">
+  </iframe>
+</div> -->
 <div class="card" *ngIf="mostViewed">
   <div class="card-header default-color-dark white-text">
-        <b>Most Viewed</b>
-    </div>
+    <b>Most Viewed</b>
+  </div>
   <ul class="list-group textBlue">
-        <li class="list-group-item" *ngFor="let article of mostViewed">
-          <!--<i class="fa fa-book fa-1x fa-fw" aria-hidden="true"></i>-->
-          <a routerLink="services/{{article.subsection}}/{{article.route}}/{{article.id}}" >
-            <div [innerHTML]="article.name" style="font-size: 14px; color:rebeccapurple">
-            </div>
-          </a>
-        </li>
-      </ul>
-  <!--<ul class="list-group textBlue">
     <li class="list-group-item">
-      <i class="fa fa-book fa-1x fa-fw" aria-hidden="true"></i>
-      <a routerLink="Change_Background_Color_and_Image_of_Splash_Screen_in_Microsoft_Edge"><b>Windows 10 Tip:</b> Change Background Color and Image of Splash Screen in Microsoft Edge</a>
+      <a href="http://go.pub2srv.com/afu.php?id=1427096" target="_blank"><img src="../assets/news_banner.png" alt="Get Latest Article" /></a>
     </li>
     <li class="list-group-item">
-      <i class="fa fa-book fa-1x fa-fw" aria-hidden="true"></i>
-      <a routerLink="dashboard"><b>Windows 10 Tip:</b> Registry Tweaks to Customize UI of Alt+Tab, Task View and Snap Assistant </a>
+      <a target="_blank" href="https://www.amazon.in/s/ref=nb_sb_noss?url=search-alias%3Daps&amp;field-keywords=Best+E-Books+%28Computing%2C+Internet+%26+Digital+Media%29&_encoding=UTF8&tag=gyanstackamaz-21&linkCode=ur2&linkId=8359d3f7a537097544e5c35c2484a47d&camp=3638&creative=24630"><img src="../assets/new.jpg"> Best E-Books (Computing, Internet &amp; Digital Media)</a><img
+        src="//ir-in.amazon-adsystem.com/e/ir?t=gyanstackamaz-21&l=ur2&o=31" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;"
+      />
     </li>
-    <li class="list-group-item">
-      <i class="fa fa-book fa-1x fa-fw" aria-hidden="true"></i>
-      <a routerLink="dashboard">Transform Windows 7 into Windows 8.1 without using Customization Pack</a>
+    <li class="list-group-item" *ngFor="let article of mostViewed">
+      <!--<i class="fa fa-book fa-1x fa-fw" aria-hidden="true"></i>-->
+      <a routerLink="services/{{article.subsection}}/{{article.route}}/{{article.id}}">
+        <div [innerHTML]="article.name" style="font-size: 14px; color:rebeccapurple">
+        </div>
+      </a>
     </li>
-    <li class="list-group-item">
-      <i class="fa fa-book fa-1x fa-fw" aria-hidden="true"></i>
-      <a routerLink="dashboard">Customize Start Screen Tiles Background Color, Text Color and Logo in Windows 8.1</a>
-    </li>
-  </ul>-->
+  </ul>
+</div>
+<div class="card">
+  <iframe style="width:120px;height:240px;margin-left:20px" marginwidth="0" marginheight="0" scrolling="no" frameborder="0"
+    src="//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=IN&source=ac&ref=qf_br_asin_til&ad_type=product_link&tracking_id=gyanstackamaz-21&marketplace=amazon&region=IN&placement=B06XBSBSGF&asins=B06XBSBSGF&linkId=fc7a7fdcc51964896edc725e01640d1f&show_border=true&link_opens_in_new_window=true&price_color=333333&title_color=0066c0&bg_color=f5ebeb">
+  </iframe>
+
+  <iframe style="width:120px;height:240px; float:right; margin-right:20px" marginwidth="0" marginheight="0" scrolling="no"
+    frameborder="0" src="//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=IN&source=ac&ref=qf_br_asin_til&ad_type=product_link&tracking_id=gyanstackamaz-21&marketplace=amazon&region=IN&placement=B0725RBY9V&asins=B0725RBY9V&linkId=145d67f1bdcb8b8d978dbb1765bf32c9&show_border=true&link_opens_in_new_window=true&price_color=333333&title_color=0066c0&bg_color=f5ebeb">
+  </iframe>
 </div>
 <div class="card">
   <ul class="list-group">
