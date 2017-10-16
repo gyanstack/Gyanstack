@@ -20,7 +20,7 @@ export class AdvertismentComponent implements OnInit {
 
   getMostViewed(): void {
     this.contentService.getMostViewed()
-      .then(contents => this.mostViewed = contents);
+      .subscribe(contents => this.mostViewed = contents);
   }
 
   initiateGoogleSearch(): void {

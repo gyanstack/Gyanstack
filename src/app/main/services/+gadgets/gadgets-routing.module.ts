@@ -38,6 +38,14 @@ const routes: Routes = [
         }
     },
     {
+        path: 'Neonode_AirBar_way_to_convert_your_ordinary_laptop_screen_to_touch_screen/:articleId',
+        component: DetailsComponent,
+        data:{
+            title:'“Neonode AirBar “way to convert your ordinary laptop screen to touch screen', 
+            metaDescription:'Today in the era of touch screen mobile phone, everyone wants their laptop too touch screen but everyone can not afford touch screen laptops due to their high price...'
+        }
+    },
+    {
         path: '',
         component: ServicesChildComponent
     },

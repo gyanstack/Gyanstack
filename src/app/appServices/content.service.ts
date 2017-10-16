@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Headers, Http, Jsonp, URLSearchParams, RequestOptions } from '@angular/http';
-
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import 'rxjs/add/operator/toPromise';
-
+import { Observable } from 'rxjs';
+import 'rxjs/add/operator/map';
 import { ArticleModel } from '../appModels/ArticleModel';
 import { PostCommentModel } from '../appModels/PostCommentModel';
 
@@ -13,53 +14,53 @@ export class ContentService {
     private baseUrl = 'http://admin.Gyanstack.com/api/';
     //private dashboardContentUrl = 'http://Gyanstack.com/db/dashboard.php';
     private limit = "5"
-
+    private dashboardList = new BehaviorSubject<any>(new Array<ArticleModel>());
     constructor(private http: Http) {
     }
 
-    getDashboardContents(): Promise<ArticleModel[]> {
+    getDashboardContents(): Observable<ArticleModel[]> {
+        if (this.dashboardList.value.length != 0) {
+            return this.dashboardList.asObservable();
+        }
+
         let requestOptions = new RequestOptions();
         let params = new URLSearchParams();
         params.set('count', '10');
         requestOptions.search = params;
         return this.http.get(this.baseUrl + "DashboardApi/GetRecent/10")
-            .toPromise()
-            .then(response => this.returnDataBaseModel(response))
-            .catch(this.handleError);
+            .map(response => this.returnDataDashboardModel(response))
+            .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
     }
 
-    getMostViewed(): Promise<ArticleModel[]> {
+    getMostViewed(): Observable<ArticleModel[]> {
         let requestOptions = new RequestOptions();
         let params = new URLSearchParams();
         params.set('count', '10');
         requestOptions.search = params;
         return this.http.get(this.baseUrl + "DashboardApi/GetMostViewed/10")
-            .toPromise()
-            .then(response => this.returnDataBaseModel(response))
-            .catch(this.handleError);
+            .map(response => this.returnDataBaseModel(response))
+            .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
     }
 
-    getServiceContents(method: string): Promise<ArticleModel[]> {
+    getServiceContents(method: string): Observable<ArticleModel[]> {
         let requestOptions = new RequestOptions();
         let params = new URLSearchParams();
         params.set('name', method);
         requestOptions.search = params;
         return this.http.get(this.baseUrl + "DashboardApi/GetList/" + method)
-            .toPromise()
-            .then(response => this.returnDataBaseModel(response))
-            .catch(this.handleError);
+            .map(response => this.returnDataBaseModel(response))
+            .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
     }
 
-    getChildContentData(articleId: number): Promise<ArticleModel> {
+    getChildContentData(articleId: number): Observable<ArticleModel> {
         let requestOptions = new RequestOptions();
         let params = new URLSearchParams();
         params.set('id', '' + articleId);
         requestOptions.search = params;
 
         return this.http.get(this.baseUrl + "ArticleApi/GetDetail/" + articleId)
-            .toPromise()
-            .then(response => this.returnArticleModel(response))
-            .catch(this.handleError);
+            .map(response => this.returnArticleModel(response))
+            .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
     }
 
     getContentHtml(path: string): Promise<any> {
@@ -99,7 +100,9 @@ export class ContentService {
     }
 
     private returnDataDashboardModel(response: any): any {
+        debugger
         let result = response.json() as ArticleModel[];
+        this.dashboardList.next(result);
         return result;
     }
 

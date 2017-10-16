@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './main/dashboard/dashboard.component';
+import { AboutComponent } from './about/about.component';
 import { ServicesComponent } from './main/services/services.component';
 
 const routes: Routes = [
@@ -13,6 +14,10 @@ const routes: Routes = [
     { 
         path: 'services', 
         loadChildren: './main/services/services.module#ServicesModule' 
+    },
+    {
+        path: 'about',
+        component: AboutComponent 
     },
     {
         path: '',

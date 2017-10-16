@@ -29,6 +29,14 @@ const routes: Routes = [
         }
     },
     {
+        path: 'Google_Play_Store_Error_Error_retrieving_information_from_server_DF-DFERH-01_Easy_Fix/:articleId',
+        component: DetailsComponent,
+        data:{
+            title:'Google Play Store Error “Error retrieving information from server. [DF-DFERH-01]”: Easy Fix', 
+            metaDescription:'Android users are increasing day by day in whole world, due to its easy handling procedure and vast numbers of applications. From a reliable source it is revealed that out of total available smart phones in the world about 80% is Android based, which clearly shows its popularity among the users.'
+        }
+    },
+    {
         path: '',
         component: ServicesChildComponent
     },

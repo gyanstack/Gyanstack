@@ -1,12 +1,12 @@
 import 'rxjs/add/operator/switchMap';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, Params, Router, NavigationEnd, Routes } from '@angular/router';
 import { Title, Meta } from '@angular/platform-browser';
 
-import 'rxjs/add/operator/filter';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/mergeMap';
+// import 'rxjs/add/operator/filter';
+// import 'rxjs/add/operator/map';
+// import 'rxjs/add/operator/mergeMap';
 
 import { Location } from '@angular/common';
 import { ArticleModel } from 'app/appModels/ArticleModel';
@@ -28,6 +28,7 @@ export class DetailsComponent implements OnInit {
     article: ArticleModel;
     userComments: UserCommentsModel[];
     repoUrl: string;
+    sub: any;
     private location: Location;
     public userComment: PostCommentModel;
     constructor(
@@ -40,7 +41,7 @@ export class DetailsComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.route
+        this.sub = this.route
             .data
             .subscribe(v => {
                 this.titleService.setTitle(v["title"]);
@@ -54,6 +55,12 @@ export class DetailsComponent implements OnInit {
                     content: v["metaDescription"]
                 },
                     "property='og:description'"
+                );
+
+                this.metaService.updateTag({
+                    content: window.location.href
+                },
+                    "property='og:url'"
                 );
             });
 
@@ -80,47 +87,6 @@ export class DetailsComponent implements OnInit {
             }
             window.scrollTo(0, 0);
         });
-
-        // this.router.events
-        //     .filter(event => event instanceof NavigationEnd)
-        //     .map(() => this.route)
-        //     .map(route => {
-        //         while (route.firstChild) route = route.firstChild;
-        //         return route;
-        //     })
-        //     .filter(route => route.outlet === 'primary')
-        //     //Data fields are merged so we can use them directly to take title and metaDescription for each route from them
-        //     .mergeMap(route => route.data)
-        //     //Real action starts there
-        //     .subscribe((event) => {
-        //         //Changing title
-        //         debugger
-        //         this.titleService.setTitle(event['title']);
-
-        //         var titleTag = { property: 'title', content: event['title'] };
-        //         var ogtitleTag = { property: 'og:title', content: event['title'] };
-        //         var ogdescriptionTag = { property: 'og:description', content: event['metaDescription'] };
-        //         var descriptionTag = { property: 'description', content: event['metaDescription'] };
-        //         var imageTag = { property: 'og:image', content: event['image'] };
-
-        //         let titleAttributeSelector: string = 'property="title"';
-        //         let ogtitleAttributeSelector: string = 'property="og:title"';
-        //         let descriptionAttributeSelector: string = 'property="description"';
-        //         let ogdescriptionAttributeSelector: string = 'property="og:description"';
-        //         let imageAttributeSelector: string = 'property="og:image"';
-
-        //         this.metaService.removeTag(titleAttributeSelector);
-        //         this.metaService.removeTag(ogtitleAttributeSelector);
-        //         this.metaService.removeTag(ogdescriptionAttributeSelector);
-        //         this.metaService.removeTag(descriptionAttributeSelector);
-        //         this.metaService.removeTag(imageAttributeSelector);
-
-        //         this.metaService.addTag(descriptionTag, true);
-        //         this.metaService.addTag(ogdescriptionTag, true);
-        //         this.metaService.addTag(titleTag, true);
-        //         this.metaService.addTag(ogtitleTag, true);
-        //         this.metaService.addTag(imageTag, true);
-        //     });
     }
 
     loadData(model: ArticleModel): void {
@@ -146,5 +112,9 @@ export class DetailsComponent implements OnInit {
         }
 
         this.contentService.updateLike(id, action);
+    }
+
+    ngOnDestroy() {
+        this.sub.unsubscribe();
     }
 }

@@ -12,6 +12,7 @@ import { HeaderComponent } from './header/header.component';
 import { DashboardComponent } from './main/dashboard/dashboard.component';
 import { AdvertismentComponent } from './advertisment/advertisment.component';
 import { HeaderFeaturedComponent } from './header-featured/header-featured.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { HeaderFeaturedComponent } from './header-featured/header-featured.compo
     HeaderComponent,
     DashboardComponent,
     AdvertismentComponent,
-    HeaderFeaturedComponent
+    HeaderFeaturedComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
