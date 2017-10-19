@@ -1,56 +1,80 @@
 <!--Section: Author box-->
-<section class="mb-4">
 
-    <!--Author box-->
-    <div class="author-box">
+<div class="card-block" style="background-color:black;border-radius:5px">
+  <!--Title-->
+  <h5 class="card-title" style="color:white">
+    Here at Gyanstack, we welcome to all the technology enthusiastic who loves to learn new tech tips & share their technical
+    knowledge to help others to come out from a situation.
+  </h5>
+  <hr>
+  <!--Text-->
+  <div class="pull-right">
+    <a class="btn btn-primary" routerLink="about">know more</a>
+  </div>
 
-        <div class="row">
-            <!--Name-->
-            <!-- <h3 class="h3-responsive text-xs-center">About Us</h3> -->
-            <hr>
-
-            <!--Avatar-->
-            <div class="col-xs-12 col-sm-1">
-                <img src="../assets/avatar_2.png" class="img-fluid rounded-circle z-depth-2">
-            </div>
-
-            <!--Author Data-->
-            <div class=" col-xs-12 col-sm-11">
-
-                <p><strong>About Us : </strong></p>
-
-                <div class="personal-sm">
-                    <a class="fb-ic" href="https://www.facebook.com/gyanstack"><i class="fa fa-facebook"> </i></a>
-                    <a class="tw-ic" href="https://twitter.com"><i class="fa fa-twitter"> </i></a>
-                    <a class="gplus-ic" href="https://plus.google.com/"><i class="fa fa-google-plus"> </i></a>
-                    <a class="li-ic" href="https://in.linkedin.com/"><i class="fa fa-linkedin"> </i></a>
-                    <a class="email-ic" href="mailto:support@gyanstack.com?Subject=Hello%20again" target="_top"><i class="fa fa-envelope-o"> </i></a>
-                </div>
-
-                <p>
-                  Here at Gyanstack, we welcome to all the technology enthusiastic who loves to learn new tech tips & share their technical knowledge to help others to come out from a situation.
-                </p>
-                <p>
-                  <a routerLink="about" routerLinkActive="active">Know more ...</a>
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
+  <div class="personal-sm">
+    <a class="fb-ic" href="https://www.facebook.com/gyanstack"><i class="fa fa-facebook"> </i></a>
+    <a class="tw-ic" href="https://twitter.com"><i class="fa fa-twitter"> </i></a>
+    <a class="gplus-ic" href="https://plus.google.com/"><i class="fa fa-google-plus"> </i></a>
+    <a class="li-ic" href="https://in.linkedin.com/"><i class="fa fa-linkedin"> </i></a>
+    <a class="email-ic" href="mailto:support@gyanstack.com?Subject=Hello%20again" target="_top"><i class="fa fa-envelope-o"> </i></a>
+  </div>
+</div>
 
 <i class="fa fa-circle-o-notch fa-5x fa-spin divcentered" *ngIf="isLoaded"></i>
-<div class="card" *ngIf="articleList">
-  <div class="card-header default-color-dark white-text">
-        <b>Recent Post</b>
+<div *ngIf="dashboardList">
+  <div class="card" *ngFor="let dashboard of dashboardList" style="margin-top:10px;">
+    <div class="card-header default-color-dark white-text">
+      <b>{{dashboard.title}}</b>
     </div>
-  <div class="list-group">
-    <li class="list-group-item justify-content-between" *ngFor="let article of articleList" style="padding-top: 2px">
-      <span style="float:right;font-size: 11px" class="text-muted">posted by : {{article.author}} | {{article.createdDate}} | {{article.subsectionName}}</span>
-      <br>
-      <a routerLink="{{article.section}}/{{article.subsection}}/{{article.route}}/{{article.id}}" routerLinkActive="active">{{article.name}}</a>
-      <br>
-        <span class="article-Span">{{article.description}}</span>
-      <a routerLink="{{article.section}}/{{article.subsection}}/{{article.route}}/{{article.id}}" class="btn btn-default btn-sm" style="font-size: 13px">read more...</a>
-    </li>
+    <div class="row">
+      <div class="col-sm-6" style="background-color:#f1f4f9" *ngFor="let article of dashboard.articles">
+        <!--Card content-->
+        <div class="card-block wrapTextCard">
+          <!--Title-->
+          <h5 class="card-title wrapTextCardTitle">
+            <a routerLink="{{article.section}}/{{article.subsection}}/{{article.route}}/{{article.id}}" class="listArticleHeader">
+              {{article.name}}
+            </a>
+          </h5>
+          <hr>
+          <div class="dashboard-thumb">
+            <a routerLink="{{article.section}}/{{article.subsection}}/{{article.route}}/{{article.id}}" class="listArticleHeader">
+              <img src="./assets/images.png" alt="gyanstack"/>
+            </a>
+          </div>
+          <!--Text-->
+          <!-- <p class="card-text"> -->
+          <div class="wrapText">{{article.description}}</div>
+          <!-- </p> -->
+          <div class="pull-right">
+            <!-- <a class="btn btn-primary">Read more</a> -->
+            <a routerLink="{{article.section}}/{{article.subsection}}/{{article.route}}/{{article.id}}" class="btn btn-promary btn-sm"
+              style="font-size: 13px">Read more...</a>
+          </div>
+        </div>
+        <!--/.Card content-->
+
+      </div>
+      <!--/.Card-->
+    </div>
+  </div>
+</div>
+<div *ngIf="otherList">
+  <div class="row">
+    <div class="col-md-6" *ngFor="let list of otherList">
+      <div class="card-header default-color-dark white-text">
+        <b>{{list.title}}</b>
+      </div>
+      <ul class="list-group textBlue">
+        <li class="list-group-item" *ngFor="let article of list.articles">
+          <!--<i class="fa fa-book fa-1x fa-fw" aria-hidden="true"></i>-->
+          <a routerLink="services/{{article.subsection}}/{{article.route}}/{{article.id}}">
+            <div [innerHTML]="article.name">
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>

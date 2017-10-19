@@ -3,6 +3,7 @@ import { Title, Meta } from '@angular/platform-browser';
 
 import { ContentService } from 'app/appServices/content.service';
 import { ArticleModel } from 'app/appModels/ArticleModel';
+import { DashboardModel } from 'app/appModels/DashboardModel';
 
 @Component({
   moduleId: module.id,
@@ -12,6 +13,8 @@ import { ArticleModel } from 'app/appModels/ArticleModel';
 })
 export class DashboardComponent implements OnInit {
   articleList: ArticleModel[] = [];
+  dashboardList: DashboardModel[] = [];
+  otherList:DashboardModel[] = [];
   isLoaded: boolean = true;
   constructor(
     private contentService: ContentService,
@@ -42,8 +45,16 @@ export class DashboardComponent implements OnInit {
       .subscribe(contents => this.loadData(contents));
   }
 
-  loadData(model: ArticleModel[]): void {
+  loadData(model: DashboardModel[]): void {
     this.isLoaded = false;
-    this.articleList = model;
+    this.dashboardList = model;
+
+    this.dashboardList = model.filter((item) => {
+            return (item.title === 'Recent Post'? item : null);
+    });
+
+    this.otherList = model.filter((item) => {
+            return (item.title != 'Recent Post'? item : null);
+    });
   }
 }

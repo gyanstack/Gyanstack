@@ -25,7 +25,7 @@
     <li class="list-group-item" *ngFor="let article of mostViewed">
       <!--<i class="fa fa-book fa-1x fa-fw" aria-hidden="true"></i>-->
       <a routerLink="services/{{article.subsection}}/{{article.route}}/{{article.id}}">
-        <div [innerHTML]="article.name" style="font-size: 14px; color:rebeccapurple">
+        <div [innerHTML]="article.name">
         </div>
       </a>
     </li>

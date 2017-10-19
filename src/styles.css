@@ -1,14 +1,60 @@
-body, input[text], button {
-  /* color: #888; */
+/* body, input[text], button {
   font-family: Cambria, Georgia;
+} */
+
+body {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    background: #f1f4f9;
+    color: #414a51;
+    font-weight: 400;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .article-Span{
-    font-size: 15px; 
+    font-size: 16px; 
     color:darkslategrey;
-    font-family:'Times New Roman', Times, serif !important
+    /* font-family:'Times New Roman', Times, serif !important; */
+    /* max-height: 3em */
 }
 
+ .wrapText {
+     max-height: 53px;
+    overflow: hidden;
+    font-size: 16px;
+}
+
+.wrapTextCardTitle {
+     max-height: 70px;
+    overflow: hidden;
+}
+
+.wrapTextCard{
+    height: 200px;
+    overflow: hidden;
+    /* padding: 25px; */
+    /* border: 1px solid gainsboro;
+    border-bottom-style: groove; */
+    padding:15px 5px 15px 5px;
+    margin:5px 0px 5px 0px;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.dashboard-thumb {
+    float: left;
+    position: relative;
+    z-index: 10;
+    margin: 0 20px 10px 0;
+    padding: 5px;
+}
+
+.col-6-pad{
+    padding: 0px 10px 1px 10px !important;
+    background-color: #f1f4f9
+}
 .navbar {
     padding-bottom: 0px !important;
 }
@@ -158,4 +204,22 @@ p{
 
 .fbMarginTop{
 margin-top: 25px;
+}
+
+h1{
+    font-size: 1.5em;
+}
+
+.articleDiv h1 {
+    padding: 1em 0px 0.25em 10px;
+    line-height: 1;
+    font-size: 2.00em !important;
+}
+
+.container{
+    padding-left: 0px !important;
+}
+
+h5{
+    font-size: 1.00em !important;
 }

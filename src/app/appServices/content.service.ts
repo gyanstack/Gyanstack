@@ -5,6 +5,7 @@ import 'rxjs/add/operator/toPromise';
 import { Observable } from 'rxjs';
 import 'rxjs/add/operator/map';
 import { ArticleModel } from '../appModels/ArticleModel';
+import { DashboardModel } from '../appModels/DashboardModel';
 import { PostCommentModel } from '../appModels/PostCommentModel';
 
 @Injectable()
@@ -14,25 +15,30 @@ export class ContentService {
     private baseUrl = 'http://admin.Gyanstack.com/api/';
     //private dashboardContentUrl = 'http://Gyanstack.com/db/dashboard.php';
     private limit = "5"
-    private dashboardList = new BehaviorSubject<any>(new Array<ArticleModel>());
+    private dashboardList = new BehaviorSubject<any>(new Array<DashboardModel>());
+    private mostViewedList = new BehaviorSubject<any>(new Array<ArticleModel>());
     constructor(private http: Http) {
     }
 
-    getDashboardContents(): Observable<ArticleModel[]> {
-        if (this.dashboardList.value.length != 0) {
-            return this.dashboardList.asObservable();
+    getDashboardContents(): Observable<DashboardModel[]> {
+        if (this.dashboardList.value.length == 0) {
+            let requestOptions = new RequestOptions();
+            let params = new URLSearchParams();
+            params.set('count', '10');
+            requestOptions.search = params;
+            return this.http.get(this.baseUrl + "DashboardApi/GetDashboard/10")
+                .map(response => this.returnDataDashboardModel(response, "dashboard"))
+                .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
         }
 
-        let requestOptions = new RequestOptions();
-        let params = new URLSearchParams();
-        params.set('count', '10');
-        requestOptions.search = params;
-        return this.http.get(this.baseUrl + "DashboardApi/GetRecent/10")
-            .map(response => this.returnDataDashboardModel(response))
-            .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
+        return this.dashboardList.asObservable();
     }
 
     getMostViewed(): Observable<ArticleModel[]> {
+        if (this.mostViewedList.value.length != 0) {
+            return this.mostViewedList.asObservable();
+        }
+
         let requestOptions = new RequestOptions();
         let params = new URLSearchParams();
         params.set('count', '10');
@@ -99,11 +105,11 @@ export class ContentService {
         return result;
     }
 
-    private returnDataDashboardModel(response: any): any {
-        debugger
-        let result = response.json() as ArticleModel[];
+    private returnDataDashboardModel(response: any, type: string): any {
+        let result = response.json() as DashboardModel[];
         this.dashboardList.next(result);
         return result;
+
     }
 
     private handleError(error: any): Promise<any> {
