@@ -27,13 +27,6 @@ export class ServicesChildComponent implements OnInit {
 
     this.contentService.getServiceContents(this.title)
       .subscribe(contents => this.loadData(contents));
-
-    this.router.events.subscribe((evt) => {
-      if (!(evt instanceof NavigationEnd)) {
-        return;
-      }
-      window.scrollTo(0, 0);
-    });
   }
 
   loadData(model: ArticleModel[]): void {

@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './main/dashboard/dashboard.component';
 import { AboutComponent } from './about/about.component';
+import { ContactDetailComponent } from './about/contact.component';
+import { DisclaimerComponent } from './about/disclaimer.component';
 import { ServicesComponent } from './main/services/services.component';
 
 const routes: Routes = [
@@ -18,6 +20,14 @@ const routes: Routes = [
     {
         path: 'about',
         component: AboutComponent 
+    },
+    {
+        path: 'contact',
+        component: ContactDetailComponent 
+    },
+    {
+        path: 'disclaimer',
+        component: DisclaimerComponent 
     },
     {
         path: '',

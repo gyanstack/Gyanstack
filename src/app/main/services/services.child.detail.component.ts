@@ -19,6 +19,7 @@ import { CeiboShare } from 'ng2-social-share';
     moduleId: module.id,
     selector: 'app-ServicesChildDetails',
     templateUrl: './services.child.detail.component.html'
+    // styleUrls:['./services.child.detail.component.css']
 })
 
 export class DetailsComponent implements OnInit {
@@ -80,13 +81,6 @@ export class DetailsComponent implements OnInit {
             userEmail: '',
             userName: ''
         }
-
-        this.router.events.subscribe((evt) => {
-            if (!(evt instanceof NavigationEnd)) {
-                return;
-            }
-            window.scrollTo(0, 0);
-        });
     }
 
     loadData(model: ArticleModel): void {

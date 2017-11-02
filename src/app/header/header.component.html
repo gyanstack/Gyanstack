@@ -1,15 +1,17 @@
 <nav class="navbar navbar-dark navbar-fixed-top bg-inverse sidebarBg" style="padding: 0px;">
-  <div class="container">
-    <button type="button" #navbarToggler class="navbar-toggler hidden-sm-up pull-xs-right" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
-      aria-controls="navbar">
+  <div class="container noLeftPad">
+    <div class="navbar-header">
+      <button type="button" #navbarToggler class="navbar-toggler hidden-sm-up pull-right" data-toggle="collapse" data-target="#navbar"
+        aria-expanded="false" aria-controls="navbar">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-    <a class="navbar-brand" routerLink="/" style="padding: 0px"><img src="./assets/logo.png"></a>
+      <a class="navbar-brand pull-left" routerLink="/" style="padding: 0px"><img src="./assets/logo.png"></a>
+    </div>
     <div class="collapse navbar-toggleable-xs" id="navbar">
-      <nav class="nav navbar-nav pull-xs-left">
+      <nav class="nav navbar-nav pull-left">
         <a class="nav-item nav-link" (click)="collapseNav()" routerLink="/" routerLinkActive="active"><i class="fa fa-home icon" aria-hidden="true"></i></a>
         <a class="nav-item nav-link" (click)="collapseNav()" routerLink="/services/Internet" routerLinkActive="active">Internet</a>
         <a class="nav-item nav-link" (click)="collapseNav()" routerLink="/services/Networking" routerLinkActive="active">Networking</a>

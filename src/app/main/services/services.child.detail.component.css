@@ -1,0 +1,49 @@
+ .overlap{
+    display:block;
+    position:absolute;
+    z-index:-1;
+    overflow:hidden;
+}
+
+ .discount{
+    display: block;
+    position: absolute;
+    right: -80px;
+    top: -40px;
+    z-index: 5;
+    background-color: #F82D29;
+    color: #FFFFFF;
+    font-size: 18px;
+    line-height: 17px;
+    font-weight: bold;
+    text-align: center;
+    padding: 60px 60px 5px 60px;
+    width: 55px;
+    border: 2px solid #000000;
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    text-shadow: 1px 1px #111;
+}
+
+.button_style{
+border: 2px solid #000000;
+padding: 10px 40px;
+background: #f00c00;
+width: 400px;
+border-radius: 25px;
+font-size:25px;
+color:black;
+text-align:center;
+cursor:pointer;
+}
+
+.button_style:hover{
+color:white;
+background: #5309A2;}
+.link_style{color:#000000;
+text-decoration:none;
+display:inline-block;}
+.link_style:hover{color:#FFFFFF;
+text-decoration:none;
+}

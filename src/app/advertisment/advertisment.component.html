@@ -14,15 +14,15 @@
     <b>Most Viewed</b>
   </div>
   <ul class="list-group textBlue">
-    <li class="list-group-item">
+    <li class="list-group-item grad2">
       <a href="http://go.pub2srv.com/afu.php?id=1427096" target="_blank"><img src="../assets/news_banner.png" alt="Get Latest Article" /></a>
     </li>
-    <li class="list-group-item">
+    <li class="list-group-item grad2">
       <a target="_blank" href="https://www.amazon.in/s/ref=nb_sb_noss?url=search-alias%3Daps&amp;field-keywords=Best+E-Books+%28Computing%2C+Internet+%26+Digital+Media%29&_encoding=UTF8&tag=gyanstackamaz-21&linkCode=ur2&linkId=8359d3f7a537097544e5c35c2484a47d&camp=3638&creative=24630"><img src="../assets/new.jpg"> Best E-Books (Computing, Internet &amp; Digital Media)</a><img
         src="//ir-in.amazon-adsystem.com/e/ir?t=gyanstackamaz-21&l=ur2&o=31" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;"
       />
     </li>
-    <li class="list-group-item" *ngFor="let article of mostViewed">
+    <li class="list-group-item grad2" *ngFor="let article of mostViewed">
       <!--<i class="fa fa-book fa-1x fa-fw" aria-hidden="true"></i>-->
       <a routerLink="services/{{article.subsection}}/{{article.route}}/{{article.id}}">
         <div [innerHTML]="article.name">
@@ -31,7 +31,7 @@
     </li>
   </ul>
 </div>
-<div class="card">
+<div class="card grad2">
   <iframe style="width:120px;height:240px;margin-left:20px" marginwidth="0" marginheight="0" scrolling="no" frameborder="0"
     src="//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=IN&source=ac&ref=qf_br_asin_til&ad_type=product_link&tracking_id=gyanstackamaz-21&marketplace=amazon&region=IN&placement=B06XBSBSGF&asins=B06XBSBSGF&linkId=fc7a7fdcc51964896edc725e01640d1f&show_border=true&link_opens_in_new_window=true&price_color=333333&title_color=0066c0&bg_color=f5ebeb">
   </iframe>
@@ -42,7 +42,7 @@
 </div>
 <div class="card">
   <ul class="list-group">
-    <li class="list-group-item justify-content-between">
+    <li class="list-group-item justify-content-between grad2">
       <b>Connect with us...</b>
     </li>
     <li class="list-group-item justify-content-between">

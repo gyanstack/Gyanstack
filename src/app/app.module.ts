@@ -13,6 +13,8 @@ import { DashboardComponent } from './main/dashboard/dashboard.component';
 import { AdvertismentComponent } from './advertisment/advertisment.component';
 import { HeaderFeaturedComponent } from './header-featured/header-featured.component';
 import { AboutComponent } from './about/about.component';
+import { ContactDetailComponent } from './about/contact.component';
+import { DisclaimerComponent } from './about/disclaimer.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { AboutComponent } from './about/about.component';
     DashboardComponent,
     AdvertismentComponent,
     HeaderFeaturedComponent,
-    AboutComponent
+    AboutComponent,
+    ContactDetailComponent,
+    DisclaimerComponent
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,6 @@
 <!--Section: Author box-->
 
-<div class="card-block" style="background-color:black;border-radius:5px">
+<div class="card-block grad1" style="background-color:black;border-radius:5px">
   <!--Title-->
   <h5 class="card-title" style="color:white">
     Here at Gyanstack, we welcome to all the technology enthusiastic who loves to learn new tech tips & share their technical
@@ -30,7 +30,7 @@
     <div class="row">
       <div class="col-sm-6" style="background-color:#f1f4f9" *ngFor="let article of dashboard.articles">
         <!--Card content-->
-        <div class="card-block wrapTextCard">
+        <div class="card wrapTextCard grad2">
           <!--Title-->
           <h5 class="card-title wrapTextCardTitle">
             <a routerLink="{{article.section}}/{{article.subsection}}/{{article.route}}/{{article.id}}" class="listArticleHeader">
@@ -61,20 +61,18 @@
   </div>
 </div>
 <div *ngIf="otherList">
-  <div class="row">
-    <div class="col-md-6" *ngFor="let list of otherList">
-      <div class="card-header default-color-dark white-text">
-        <b>{{list.title}}</b>
-      </div>
-      <ul class="list-group textBlue">
-        <li class="list-group-item" *ngFor="let article of list.articles">
-          <!--<i class="fa fa-book fa-1x fa-fw" aria-hidden="true"></i>-->
-          <a routerLink="services/{{article.subsection}}/{{article.route}}/{{article.id}}">
-            <div [innerHTML]="article.name">
-            </div>
-          </a>
-        </li>
-      </ul>
+  <div class="card" *ngFor="let list of otherList">
+    <div class="card-header default-color-dark white-text">
+      <a routerLink="services/{{list.title}}" style="color:#414A51"><b>{{list.title}}</b></a>
     </div>
+    <ul class="list-group textBlue">
+      <li class="list-group-item grad2" *ngFor="let article of list.articles">
+        <!--<i class="fa fa-book fa-1x fa-fw" aria-hidden="true"></i>-->
+        <a routerLink="services/{{article.subsection}}/{{article.route}}/{{article.id}}">
+          <div [innerHTML]="article.name">
+          </div>
+        </a>
+      </li>
+    </ul>
   </div>
 </div>

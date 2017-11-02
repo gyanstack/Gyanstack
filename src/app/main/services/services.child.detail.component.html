@@ -1,7 +1,6 @@
-<section class="mb-4" *ngIf="article">
-    <div class="author-box">
+<section class="mb-4" *ngIf="article" style="background-color:white">
+    <div class="author-box" style="padding:10px">
         <div class="row">
-            <hr/>
             <div class="col-xs-1 col-sm-1">
                 <img src="{{article.userAvatar}}" class="img-fluid rounded-circle z-depth-1">
             </div>
@@ -28,24 +27,7 @@
         </div>
     </div>
 </section>
-<section *ngIf="userComments">
-    <div class="card fbMarginTop">
-        <div class="card-header default-color-dark white-text">
-            <b>User Comments</b>
-        </div>
-        <ul class="list-group textBlue">
-            <li class="list-group-item" *ngFor="let userComment of article.userComments">
 
-                <b>@ {{userComment.userName}} : </b>
-                <span class="pull-right">
-                    <i class="fa fa-clock-o"></i> {{userComment.date}}
-                </span>
-                <span class="comment-text">{{userComment.comment}}</span>
-            </li>
-        </ul>
-    </div>
-</section>
-<hr>
 <section style="margin-top: 50px">
     <div class="card">
         <div class="card-header default-color-dark white-text">
@@ -79,5 +61,23 @@
                 </div>
             </div>-->
         </div>
+    </div>
+</section>
+
+<section *ngIf="userComments">
+    <div class="card fbMarginTop">
+        <div class="card-header default-color-dark white-text">
+            <b>User Comments</b>
+        </div>
+        <ul class="list-group textBlue">
+            <li class="list-group-item" *ngFor="let userComment of article.userComments">
+
+                <b>@ {{userComment.userName}} : </b>
+                <span class="pull-right">
+                    <i class="fa fa-clock-o"></i> {{userComment.date}}
+                </span>
+                <span class="comment-text">{{userComment.comment}}</span>
+            </li>
+        </ul>
     </div>
 </section>
