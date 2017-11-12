@@ -2,6 +2,17 @@
   font-family: Cambria, Georgia;
 } */
 
+.dropdown-menu {
+    position: relative;
+    /* display: none; */
+    /* display: -webkit-flex; */
+}
+
+.navbar-dark .navbar-nav .nav-link{
+    /* font-weight: bold; */
+    color:blanchedalmond;
+}
+
 body {
     background: #f1f4f9;
     color: #414a51;
@@ -57,6 +68,14 @@ body {
 }
 
 .grad2 {
+    /* height: 190px; */
+    background: -webkit-linear-gradient(left, white, whitesmoke); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, white, whitesmoke); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, white, whitesmoke); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, white, whitesmoke); /* Standard syntax (must be last) */
+}
+
+.grad3 {
     /* height: 190px; */
     background: -webkit-linear-gradient(left, white, whitesmoke); /* For Safari 5.1 to 6.0 */
     background: -o-linear-gradient(right, white, whitesmoke); /* For Opera 11.1 to 12.0 */

@@ -1,0 +1,27 @@
+<div class="card" style="margin-top:10px" *ngIf="article">
+    <div class="card-header default-color-dark white-text">
+        <b>Offer Detail</b>
+    </div>
+    <div class="list-group">
+        <iframe width="100%" height="500px" [src]="contentUrl" frameborder="0"></iframe>
+    </div>
+    <!-- <div class="post-description" *ngIf="ceiboShare">
+        <div class="stats">
+            <span class="pull-right">
+                <b>Share : </b>
+                <button ceiboShare [facebook]="{u: repoUrl}">
+                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                </button>
+                <button ceiboShare [linkedIn]="{url:repoUrl}">
+                    <i class="fa fa-linkedin" aria-hidden="true"></i>
+                </button>
+                <button ceiboShare [twitter]="{url:repoUrl}">
+                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                </button>
+                <button ceiboShare [googlePlus]="{url:repoUrl}">
+                    <i class="fa fa-google-plus" aria-hidden="true"></i>
+                </button>
+            </span>
+        </div>
+    </div> -->
+</div>

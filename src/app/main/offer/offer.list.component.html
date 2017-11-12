@@ -1,0 +1,19 @@
+<i class="fa fa-circle-o-notch fa-5x fa-spin divcentered" *ngIf="isLoaded"></i>
+<div class="card" style="margin-top:10px" *ngIf="listData">
+        <div class="card-header default-color-dark white-text">
+          <b>{{title}}</b>
+        </div>
+        <div class="list-group">
+          <li class="list-group-item justify-content-between grad2" *ngFor="let article of listData" style="padding-top: 2px">
+            <!--<img class="img-responsive user-photo" src="./assets/avatar_2.png" alt="user image">-->
+            <span style="float:right;font-size: 11px" class="text-muted">posted by : {{article.author}} | {{article.createdDate}} | {{article.subsectionName}}</span>
+            <br>
+            <h5>
+              <a routerLink="{{article.route}}/{{article.id}}" routerLinkActive="active">{{article.name}}</a>
+            </h5>
+            <br>
+            <span class="article-Span">{{article.description}}</span>
+            <a routerLink="{{article.route}}/{{article.id}}" class="btn btn-default btn-sm" style="font-size: 13px">read more...</a>
+          </li>
+        </div>
+      </div>

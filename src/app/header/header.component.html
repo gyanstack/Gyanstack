@@ -8,16 +8,34 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand pull-left" routerLink="/" style="padding: 0px"><img src="./assets/logo.png"></a>
+      <a class="navbar-brand pull-left" routerLink="/" style="padding: 0px">
+        <img src="./assets/logo.png">
+      </a>
     </div>
     <div class="collapse navbar-toggleable-xs" id="navbar">
       <nav class="nav navbar-nav pull-left">
-        <a class="nav-item nav-link" (click)="collapseNav()" routerLink="/" routerLinkActive="active"><i class="fa fa-home icon" aria-hidden="true"></i></a>
+        <li class="nav-item">
+          <a class="nav-link" (click)="collapseNav()" routerLink="/" routerLinkActive="active">
+            <i class="fa fa-home icon" aria-hidden="true"></i>
+          </a>
+        </li>
         <a class="nav-item nav-link" (click)="collapseNav()" routerLink="/services/Internet" routerLinkActive="active">Internet</a>
         <a class="nav-item nav-link" (click)="collapseNav()" routerLink="/services/Networking" routerLinkActive="active">Networking</a>
         <a class="nav-item nav-link" (click)="collapseNav()" routerLink="/services/Windows" routerLinkActive="active">Windows</a>
         <a class="nav-item nav-link" (click)="collapseNav()" routerLink="/services/Android" routerLinkActive="active">Android</a>
         <a class="nav-item nav-link" (click)="collapseNav()" routerLink="/services/Miscellaneous" routerLinkActive="active">Miscellaneous</a>
+        <a class="nav-item nav-link" (click)="collapseNav()" routerLink="/offer" routerLinkActive="active"> <i class="fa fa-certificate" aria-hidden="true"></i> Offer Zone </a>
+        <!-- <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" routerLink="/offer" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="true">
+            Offer Zone
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" (click)="collapseNav()" routerLink="/offer/antivirus">Antivirus</a>
+                <a class="dropdown-item" (click)="collapseNav()" routerLink="/offer/vpn">VPN</a>
+                <a class="dropdown-item" (click)="collapseNav()" routerLink="/offer/webHosting">Web Hosting</a>
+            </div>
+        </li> -->
       </nav>
     </div>
   </div>

@@ -5,6 +5,7 @@ import { AboutComponent } from './about/about.component';
 import { ContactDetailComponent } from './about/contact.component';
 import { DisclaimerComponent } from './about/disclaimer.component';
 import { ServicesComponent } from './main/services/services.component';
+import { OfferComponent } from './main/offer/offer.component';
 
 const routes: Routes = [
     { 
@@ -16,6 +17,10 @@ const routes: Routes = [
     { 
         path: 'services', 
         loadChildren: './main/services/services.module#ServicesModule' 
+    },
+    { 
+        path: 'offer', 
+        loadChildren: './main/offer/offer.module#OfferModule' 
     },
     {
         path: 'about',
@@ -29,6 +34,10 @@ const routes: Routes = [
         path: 'disclaimer',
         component: DisclaimerComponent 
     },
+    // { 
+    //     path: 'offer', 
+    //     component: OfferComponent 
+    // },
     {
         path: '',
         component: DashboardComponent 

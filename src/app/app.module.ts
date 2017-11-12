@@ -1,9 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-// import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-routing.module';
 import {ServicesModule } from './main/services/services.module';
+import {OfferModule } from './main/offer/offer.module';
 import{ContentService} from './appServices/content.service';
 import {NgForm} from '@angular/forms';
 
@@ -32,7 +32,8 @@ import { DisclaimerComponent } from './about/disclaimer.component';
     // FormsModule,
     HttpModule,
     AppRoutingModule,
-    ServicesModule
+    ServicesModule,
+    OfferModule
   ],
   providers: [ContentService],
   bootstrap: [AppComponent]

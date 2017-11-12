@@ -6,20 +6,27 @@
             </div>
             <div class="col-xs-12 col-sm-12 articleDiv" style="padding-bottom: 15px">
                 <h1>{{article.name}}</h1>
-                    <span style="float:right;font-size: 11px" class="text-muted">posted by : {{article.author}} | {{article.createdDate}}</span>
+                <span style="float:right;font-size: 11px" class="text-muted">posted by : {{article.author}} | {{article.createdDate}}</span>
             </div>
             <div class="col-xs-12 col-sm-12">
                 <div [innerHTML]="article.contentHtml">
                 </div>
                 <div class="post-description">
                     <div class="stats">
-                        <span class="pull-right"> <b>Share : </b>
-                        <button ceiboShare  [facebook]="{u: repoUrl}"><i class="fa fa-facebook" aria-hidden="true"></i></button>
-                        <button ceiboShare  [linkedIn]="{url:repoUrl}"><i class="fa fa-linkedin" aria-hidden="true"></i></button>
-                        <button ceiboShare  [twitter]="{url:repoUrl, text:'Checkout this awesome ng2 social share directive', hashtags:'angular2, social, ceiboIT'}">
-                            <i class="fa fa-twitter" aria-hidden="true"></i>
-                        </button>
-                        <button ceiboShare  [googlePlus]="{url:repoUrl}"><i class="fa fa-google-plus" aria-hidden="true"></i></button>
+                        <span class="pull-right">
+                            <b>Share : </b>
+                            <button ceiboShare [facebook]="{u: repoUrl}">
+                                <i class="fa fa-facebook" aria-hidden="true"></i>
+                            </button>
+                            <button ceiboShare [linkedIn]="{url:repoUrl}">
+                                <i class="fa fa-linkedin" aria-hidden="true"></i>
+                            </button>
+                            <button ceiboShare [twitter]="{url:repoUrl}">
+                                <i class="fa fa-twitter" aria-hidden="true"></i>
+                            </button>
+                            <button ceiboShare [googlePlus]="{url:repoUrl}">
+                                <i class="fa fa-google-plus" aria-hidden="true"></i>
+                            </button>
                         </span>
                     </div>
                 </div>

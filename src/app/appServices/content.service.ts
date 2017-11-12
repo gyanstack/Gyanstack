@@ -16,12 +16,12 @@ export class ContentService {
     //private dashboardContentUrl = 'http://Gyanstack.com/db/dashboard.php';
     private limit = "5"
     private dashboardList = new BehaviorSubject<any>(new Array<DashboardModel>());
-    private mostViewedList = new BehaviorSubject<any>(new Array<ArticleModel>());
+    private advertiseList = new BehaviorSubject<any>(new Array<DashboardModel>());
     constructor(private http: Http) {
     }
 
     getDashboardContents(): Observable<DashboardModel[]> {
-        if (this.dashboardList.value.length == 0) {
+        if (this.dashboardList.value.length == 0) { 
             let requestOptions = new RequestOptions();
             let params = new URLSearchParams();
             params.set('count', '10');
@@ -34,17 +34,17 @@ export class ContentService {
         return this.dashboardList.asObservable();
     }
 
-    getMostViewed(): Observable<ArticleModel[]> {
-        if (this.mostViewedList.value.length != 0) {
-            return this.mostViewedList.asObservable();
+    getAdvertiseSection(): Observable<DashboardModel[]> {
+        if (this.advertiseList.value.length != 0) {
+            return this.advertiseList.asObservable();
         }
 
         let requestOptions = new RequestOptions();
         let params = new URLSearchParams();
-        params.set('count', '10');
+        params.set('count', '5');
         requestOptions.search = params;
-        return this.http.get(this.baseUrl + "DashboardApi/GetMostViewed/10")
-            .map(response => this.returnDataBaseModel(response))
+        return this.http.get(this.baseUrl + "DashboardApi/GetAdvertise/5")
+            .map(response => this.returnDataDashboardModel(response, "advertise"))
             .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
     }
 
@@ -54,7 +54,21 @@ export class ContentService {
         params.set('name', method);
         requestOptions.search = params;
         return this.http.get(this.baseUrl + "DashboardApi/GetList/" + method)
-            .map(response => this.returnDataBaseModel(response))
+            .map(response => {
+              return this.returnDataBaseModel(response)
+            })
+            .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
+    }
+
+    getOfferList(method: string): Observable<ArticleModel[]> {
+        let requestOptions = new RequestOptions();
+        let params = new URLSearchParams();
+        params.set('name', method);
+        requestOptions.search = params;
+        return this.http.get(this.baseUrl + "DashboardApi/GetOfferList/" + method)
+            .map(response => {
+               return this.returnDataBaseModel(response)
+            })
             .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
     }
 
@@ -107,9 +121,11 @@ export class ContentService {
 
     private returnDataDashboardModel(response: any, type: string): any {
         let result = response.json() as DashboardModel[];
-        this.dashboardList.next(result);
+        if (type == "dashboard")
+            this.dashboardList.next(result);
+        else
+            this.advertiseList.next(result);
         return result;
-
     }
 
     private handleError(error: any): Promise<any> {
