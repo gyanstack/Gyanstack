@@ -10,7 +10,7 @@
       <ul class="list-group textBlue">
         <li class="list-group-item grad2" *ngFor="let article of list.articles">
           <!--<i class="fa fa-book fa-1x fa-fw" aria-hidden="true"></i>-->
-          <a routerLink="{{article.section}}/{{article.subsection}}/{{article.route}}/{{article.id}}">
+          <a routerLink="{{article.section}}/{{article.subsection}}/{{article.route}}/{{article.id}}" target="_blank">
             <div [innerHTML]="article.name">
             </div>
           </a>

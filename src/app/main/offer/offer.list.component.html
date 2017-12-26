@@ -9,11 +9,11 @@
             <span style="float:right;font-size: 11px" class="text-muted">posted by : {{article.author}} | {{article.createdDate}} | {{article.subsectionName}}</span>
             <br>
             <h5>
-              <a routerLink="{{article.route}}/{{article.id}}" routerLinkActive="active">{{article.name}}</a>
+              <a routerLink="{{article.route}}/{{article.id}}" target="_blank" routerLinkActive="active">{{article.name}}</a>
             </h5>
             <br>
             <span class="article-Span">{{article.description}}</span>
-            <a routerLink="{{article.route}}/{{article.id}}" class="btn btn-default btn-sm" style="font-size: 13px">read more...</a>
+            <a routerLink="{{article.route}}/{{article.id}}" target="_blank" class="btn btn-default btn-sm" style="font-size: 13px">read more...</a>
           </li>
         </div>
       </div>

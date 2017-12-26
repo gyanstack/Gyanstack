@@ -4,8 +4,8 @@ import { DashboardComponent } from './main/dashboard/dashboard.component';
 import { AboutComponent } from './about/about.component';
 import { ContactDetailComponent } from './about/contact.component';
 import { DisclaimerComponent } from './about/disclaimer.component';
-import { ServicesComponent } from './main/services/services.component';
-import { OfferComponent } from './main/offer/offer.component';
+// import { ServicesComponent } from './main/services/services.component';
+// import { OfferComponent } from './main/offer/offer.component';
 
 const routes: Routes = [
     { 
